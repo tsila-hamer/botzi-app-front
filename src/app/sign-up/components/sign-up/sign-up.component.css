@@ -124,6 +124,7 @@
   color: #fff;
   transition: 0.4s;
   border-radius: 4px;
+  font-weight: 600;
 }
 
 .sign .sign-up-form button[type="submit"]:hover {
