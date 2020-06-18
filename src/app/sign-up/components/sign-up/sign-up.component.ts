@@ -1,16 +1,34 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AngularFireAuthModule, AngularFireAuth } from  'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database-deprecated";
+//import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2/auth';
+import { Router } from '@angular/router';
+import { moveIn } from 'app/router.animations';
 declare var FB: any;
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css']
+  styleUrls: ['./sign-up.component.css'],
+  animations: [moveIn()],
+  host: {'[@moveIn]': ''}
 })
+
 export class SignUpComponent implements OnInit {
   @Input() signUpType: string;
   @Input() signUpHeader: string;
+  error: any;
 
-  constructor() { }
+  constructor(public af: AngularFireAuth,private router: Router) {
+  /*
+    this.af.auth.subscribe(auth => {
+      if(auth) {
+        this.router.navigateByUrl('/');
+      }
+    });
+    */
+  }
 
 
   ngOnInit() {
@@ -45,13 +63,14 @@ export class SignUpComponent implements OnInit {
               console.log('submitLogin',response);
               if (response.authResponse)
               {
-                //login success
-                //login success code here
-                //redirect to home page
+                console.log(response);
+                console.log(response.authResponse);
+                this.router.navigate(['/']);
                }
                else
                {
                console.log('User login failed');
+               this.error = response.error;
              }
           });
 

@@ -10,6 +10,7 @@
 
       <div class="container">
 
+        <span class="error" *ngIf="error">{{ error }}</span>
         <form action="" method="post" role="form" class="sign-up-form">
             <div class="text-center facebook-button">
               <button type="button" class="btn facebook-btn" (click)="submitLogin();">
@@ -51,4 +52,5 @@
         </form>
 
       </div>
+      <a routerLink="/signup" routerLinkActive="active" class="alc">No account? <strong>Create one here</strong></a>
     </section><!-- End sign Section -->
