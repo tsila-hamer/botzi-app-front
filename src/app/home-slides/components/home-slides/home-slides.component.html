@@ -1,0 +1,28 @@
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+          <div *ngFor="let slide of slides; index as i;">
+            <app-slide [imgPath]="slide.url" [selected]="slide.selected"></app-slide>
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" (click)="slide(-1)" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon ri-arrow-left-line" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" (click)="slide(1)" role="button" data-slide="next">
+          <span class="carousel-control-next-icon ri-arrow-right-line" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div>
+
+  </section><!-- End Hero -->

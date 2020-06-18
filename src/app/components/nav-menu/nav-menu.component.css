@@ -1,0 +1,15 @@
+.divider:before {
+    content: "";
+    border-left: 1px solid rgba(82,92,101,.4);
+    width: 0;
+    height: 12px;
+    }
+
+.divider {
+  margin-left: 30px;
+}
+
+.login-btn {
+  font-weight: 700;
+  color: #01b1d7;
+}
