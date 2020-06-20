@@ -1,0 +1,180 @@
+/*--------------------------------------------------------------
+# sign
+--------------------------------------------------------------*/
+.sign .info-wrap {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.sign .info {
+  background: #fff;
+}
+
+.sign .info i {
+  font-size: 24px;
+  color: #01b1d7;
+  float: left;
+  width: 48px;
+  height: 48px;
+  background: #e2faff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.sign .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #354144;
+}
+
+.sign .info p {
+  padding: 0 0 0 60px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #62787d;
+}
+
+.sign .info:hover i {
+  background: #01b1d7;
+  color: #fff;
+}
+
+.sign .sign-up-form {
+  width: 100%;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  padding: 30px;
+  background: #fff;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.sign .sign-up-form .form-group {
+  padding-bottom: 8px;
+}
+
+.sign .sign-up-form .validate {
+  display: none;
+  color: red;
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.sign .sign-up-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.sign .sign-up-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.sign .sign-up-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.sign .sign-up-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+.sign .sign-up-form input, .sign .sign-up-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.sign .sign-up-form input {
+  height: 44px;
+}
+
+.sign .sign-up-form textarea {
+  padding: 10px 12px;
+}
+
+.sign .sign-up-form button[type="submit"] {
+  background: #01b1d7;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.sign .sign-up-form button[type="submit"]:hover {
+  background: #0dd3fe;
+}
+
+.sign .sign-up-form .facebook-btn {
+  margin: 0 0 40px 0;
+  color: #757c81;
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.42), 0 1px 4px rgba(0,0,0,.12);
+  border-radius: 4px;
+}
+
+.sign .sign-up-form .facebook-btn:hover {
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0,0,0,.12);
+}
+
+.sign .sign-up-form .facebook-btn:hover:before {
+   content: assets/img/icons/facebook.png;
+   width: 20px;
+   float: left;
+   margin-right: 5px;
+   margin-top: -2px;
+ }
+
+.btn .icon-btn {
+  max-width: 25px;
+  max-height: 25px;
+}
+
+form .error {
+  color: red;
+  margin-bottom: 20px;
+}
+
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

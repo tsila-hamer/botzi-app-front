@@ -1,1 +1,51 @@
-<app-sign-up [signUpType]="signUpType" [signUpHeader]="signUpHeader"></app-sign-up>
+<!-- ======= sign Section ======= -->
+    <section id="sign" class="sign">
+      <div class="container">
+        <div class="section-title">
+          <span>Log In</span>
+          <h2>Log In</h2>
+          <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+        </div>
+      </div>
+
+      <div class="container">
+
+        <form action="" method="post" role="form" class="sign-up-form" #formData="ngForm" (ngSubmit)="onSubmitLogIn(formData)">
+
+            <div class="text-center facebook-button">
+              <button type="button" class="btn facebook-btn" (click)="submitLoginFacebook();">
+                <img class="icon-btn" src="assets\img\icons\facebook.svg">
+                Login with facebook
+              </button>
+            </div>
+
+            <div class="error" *ngIf="error">{{ error }}</div>
+
+            <div class="form-group">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" type="email"
+                     data-msg="Please enter a valid email" ngModel required email/>
+              <div class="validate"></div>
+            </div>
+
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password"
+                   ngModel [(ngModel)]="password" #passwordInput="ngModel"
+                   data-msg="Please enter at least 8 chars of subject" />
+            <div class="validate"></div>
+            <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="alert alert-danger">
+                  <div *ngIf="passwordInput.errors.required">
+                  Password is required.
+                </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="text-center" *ngIf="signUpType=='log in'"><button type="submit">Log In</button></div>
+        </form>
+
+      </div>
+      <a routerLink="/signup" routerLinkActive="active" class="alc">No account? <strong>Create one here</strong></a>
+    </section><!-- End sign Section -->
