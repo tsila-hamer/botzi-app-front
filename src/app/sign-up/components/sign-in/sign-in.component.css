@@ -53,6 +53,12 @@
   max-width: 600px;
 }
 
+.switch-signup {
+  padding: 30px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .sign .sign-up-form .form-group {
   padding-bottom: 8px;
 }

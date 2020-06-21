@@ -13,7 +13,7 @@
         <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
         <span class="button button--navigation divider"></span>
         <a *ngIf="!this.authService.loggedIn" class="login-btn" href="" (click)="onLogin()" routerLink="/login">Login</a>
-        <a *ngIf="this.authService.loggedIn" class="login-btn" href="" (click)="onLogout()">Logout</a>
+        <a *ngIf="this.authService.loggedIn" class="login-btn" href="" (click)="onLogout()">Hi {{ this.authService.getLoggedUserName() }}</a>
       </div>
     </div>
   </section>

@@ -8,7 +8,7 @@ import { SignUpComponent } from '../sign-up/sign-up.component';
 })
 export class SignUpVolunteerComponent implements OnInit {
   signUpHeader = "sign up as volunteer";
-  signUpType = "sign up";
+  type = "volunteer";
 
   constructor() { }
 

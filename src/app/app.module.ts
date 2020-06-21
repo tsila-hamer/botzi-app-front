@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule, AngularFireAuth } from  'angularfire2/auth';
+import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { NgModule } from '@angular/core';
 
@@ -47,10 +48,11 @@ const appRoutes: Routes = [
     RouterModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [
-    AuthService, AuthGuard
+    AuthService, AuthGuard, AngularFirestoreModule
   ],
   bootstrap: [AppComponent]
 })

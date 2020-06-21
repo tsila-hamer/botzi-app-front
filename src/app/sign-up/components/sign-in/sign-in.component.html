@@ -43,9 +43,11 @@
             <div class="error-message"></div>
           </div>
 
-          <div class="text-center" *ngIf="signUpType=='log in'"><button type="submit">Log In</button></div>
+          <div class="text-center" ><button type="submit">Log In</button></div>
         </form>
-
+        <div class="switch-signup">
+          <a routerLink="/sign-up/volunteer" routerLinkActive="active" class="alc">No account? <strong>Create one here</strong></a>
+        </div>
       </div>
-      <a routerLink="/signup" routerLinkActive="active" class="alc">No account? <strong>Create one here</strong></a>
+
     </section><!-- End sign Section -->
