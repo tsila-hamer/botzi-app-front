@@ -32,8 +32,19 @@ export class AuthService {
 
   getLoggedUserName() {
     this.currentUser = firebase.auth().currentUser;
+    console.log(this.currentUser);
     if (this.currentUser && this.currentUser.displayName) {
       return this.currentUser.displayName;
+    } else {
+      return '';
+    }
+  }
+
+  getLoggedUserId() {
+    this.currentUser = firebase.auth().currentUser;
+    console.log(this.currentUser);
+    if (this.currentUser && this.currentUser.uid) {
+      return this.currentUser.uid;
     } else {
       return '';
     }
