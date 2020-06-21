@@ -1,3 +1,4 @@
+import { Campaign } from './Campaign';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
@@ -17,6 +18,9 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
+import { AvailableMatchComponent } from './available-match/available-match.component';
+import { DisplayMatchesComponent } from './display-matches/display-matches.component';
+import { CampaignPageComponent } from './campaign-page/campaign-page.component';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBZJI-R8jesec4R4H8OyElRNYsc5IGpPQM",
@@ -30,7 +34,7 @@ export const firebaseConfig = {
 };
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent}
+  {path: '', component: HomeComponent}, { path: 'campaignPage', component: CampaignPageComponent },
 ];
 
 @NgModule({
@@ -38,7 +42,10 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    NavMenuComponent
+    NavMenuComponent,
+    AvailableMatchComponent,
+    DisplayMatchesComponent,
+    CampaignPageComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +61,7 @@ const appRoutes: Routes = [
   providers: [
     AuthService, AuthGuard, AngularFirestoreModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [AvailableMatchComponent, DisplayMatchesComponent, CampaignPageComponent]
 })
 export class AppModule { }
