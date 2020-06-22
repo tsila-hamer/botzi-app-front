@@ -12,8 +12,8 @@
         <a href="#" class="skype"><i class="icofont-skype"></i></a>
         <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
         <span class="button button--navigation divider"></span>
-        <a *ngIf="!this.authService.loggedIn" class="login-btn" href="" (click)="onLogin()" routerLink="/login">Login</a>
-        <a *ngIf="this.authService.loggedIn" class="login-btn" href="" (click)="onLogout()">Hi {{ this.authService.getLoggedUserName() }}</a>
+        <a *ngIf="!user" class="login-btn" href="" (click)="onLogin()" routerLink="/login">Login</a>
+        <a *ngIf="user" class="login-btn" href="" (click)="onLogout()">Hi {{ authService.getLoggedUserName() }}</a>
       </div>
     </div>
   </section>

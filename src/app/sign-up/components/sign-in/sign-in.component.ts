@@ -52,7 +52,7 @@ export class SignInComponent implements OnInit {
         (success) => {
         console.log(success);
         this.authService.login();
-        this.router.navigate(['/'])
+        this.router.navigate(['/']);
       }).catch(
         (err) => {
         console.log(err);

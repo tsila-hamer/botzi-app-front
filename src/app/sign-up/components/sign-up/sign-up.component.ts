@@ -97,7 +97,7 @@ export class SignUpComponent implements OnInit {
         var userId = success.uid;
         this.writeUserData(userId, name);
         this.authService.login();
-        this.router.navigate(['/'])
+        this.router.navigate(['/']);
       }).catch(
         (err) => {
         console.log(err);
