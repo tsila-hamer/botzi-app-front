@@ -11,7 +11,7 @@ export class DisplayMatchesComponent implements OnInit {
 
   public campaignsList: Campaign[] = [
     {
-    campaignName: "babysitting",
+    campaignName: "Babysitting",
     campaignID: 12345432,
     campaignNpo: "Elem" ,
     startDate: '02/08/2020',

@@ -14,13 +14,14 @@ import { AngularFirestore } from 'angularfire2/firestore';
 })
 export class CampaignPageComponent implements OnInit {
   campaign: Campaign = {
-    campaignName: "babysitting",
+    campaignName: "Babysitting",
     campaignID: 12345432,
     campaignNpo: "Elem" ,
     startDate: '02/08/2020',
     endDate: '12/08/2020',
     city: "Zfat",
-    cText: "you'd babyssit kids whom parents are hospitalized"};
+    cText: "Babysit kids whom parents are hospitalized",
+    img_url: "assets/img/campaigns/babysitter.jpg"};
 
   constructor(public route: ActivatedRoute, private db: AngularFirestore, private authService: AuthService) { }
 
