@@ -21,6 +21,8 @@ import { AuthGuard } from './auth-guard.service';
 import { AvailableMatchComponent } from './available-match/available-match.component';
 import { DisplayMatchesComponent } from './display-matches/display-matches.component';
 import { CampaignPageComponent } from './campaign-page/campaign-page.component';
+import { VolunteerFormComponent } from './volunteer-form/volunteer-form.component';
+import { CampaignFormComponent } from './campaign-form/campaign-form.component';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBZJI-R8jesec4R4H8OyElRNYsc5IGpPQM",
@@ -35,7 +37,9 @@ export const firebaseConfig = {
 
 const appRoutes: Routes = [   
   {path: '', component: HomeComponent}, 
+  {path: 'campaignForm', component: CampaignFormComponent}, 
   {path: 'matchingCampaigns', component: DisplayMatchesComponent}, 
+  {path: 'volunteerForm', component: VolunteerFormComponent}, 
   { path: 'campaignPage/:campaignName/:campaignID/:campaignNpo/:startDate/:endDate/:city/:cText', component: CampaignPageComponent },
 ];
 
@@ -47,7 +51,9 @@ const appRoutes: Routes = [
     NavMenuComponent,
     AvailableMatchComponent,
     DisplayMatchesComponent,
-    CampaignPageComponent
+    CampaignPageComponent,
+    VolunteerFormComponent,
+    CampaignFormComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +70,6 @@ const appRoutes: Routes = [
     AuthService, AuthGuard, AngularFirestoreModule
   ],
   bootstrap: [AppComponent],
-  exports: [AvailableMatchComponent, DisplayMatchesComponent, CampaignPageComponent]
+  exports: [AvailableMatchComponent, DisplayMatchesComponent, CampaignPageComponent, VolunteerFormComponent, CampaignFormComponent]
 })
 export class AppModule { }
