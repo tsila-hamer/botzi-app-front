@@ -43,6 +43,7 @@ onClick(){
   this.db.collection('/Volunteers').doc(userId).update({
     userCampaigns : volCampaigns
   }).then(res => {}, err => err);
+
   console.log('Writing userToCammpaign ' + userId );
   var campaignVols = [this.getCampaignsVols(this.campaign.campaignID), userId];
   this.db.collection('/Campaigns').doc(this.campaign.campaignID).update({
