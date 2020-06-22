@@ -17,6 +17,7 @@ export class DisplayMatchesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    //load matching list from fire-base
   }
 
 }

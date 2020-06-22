@@ -14,7 +14,7 @@
           <br/>
           <span class="pricing-price">{{ campaign.startDate + " - " + campaign.endDate}}</span>
           <br/>
-          <a class="btn btn-white-view" [routerLink]="[ '/campaignPage',campaign.campaignName,campaign.campaignID,
+          <a  [routerLink]="[ '/campaignPage',campaign.campaignName,campaign.campaignID,
            campaign.campaignNpo,campaign.startDate,campaign.endDate,campaign.city,campaign.cText]">
             Show more</a>
 

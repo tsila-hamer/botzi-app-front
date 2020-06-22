@@ -35,6 +35,7 @@ export const firebaseConfig = {
 
 const appRoutes: Routes = [   
   {path: '', component: HomeComponent}, 
+  {path: 'matchingCampaigns', component: DisplayMatchesComponent}, 
   { path: 'campaignPage/:campaignName/:campaignID/:campaignNpo/:startDate/:endDate/:city/:cText', component: CampaignPageComponent },
 ];
 

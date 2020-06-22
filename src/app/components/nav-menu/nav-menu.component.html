@@ -14,6 +14,7 @@
         <span class="button button--navigation divider"></span>
         <a *ngIf="!this.authService.loggedIn" class="login-btn" href="" (click)="onLogin()" routerLink="/login">Login</a>
         <a *ngIf="this.authService.loggedIn" class="login-btn" href="" (click)="onLogout()">Hi {{ this.authService.getLoggedUserName() }}</a>
+        <a *ngIf="this.authService.loggedIn" class="login-btn" href="" routerLink="/matchingCampaigns" >Matches For you </a>
       </div>
     </div>
   </section>
