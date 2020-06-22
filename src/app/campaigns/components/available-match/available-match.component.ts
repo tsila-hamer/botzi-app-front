@@ -1,4 +1,4 @@
-import { Campaign } from './../Campaign';
+import { Campaign } from 'app/campaigns/models/Campaign';
 import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-available-match',
@@ -9,7 +9,7 @@ export class AvailableMatchComponent implements OnInit {
 
   @Input() public campaign:Campaign;
 
-  
+
   constructor() { }
 
   ngOnInit() {

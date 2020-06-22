@@ -1,4 +1,3 @@
-import { Campaign } from './Campaign';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
@@ -10,6 +9,8 @@ import { NgModule } from '@angular/core';
 
 import { HomeSlidesModule } from './home-slides/home-slides.module';
 import { SignUpModule } from './sign-up/sign-up.module';
+import { CampaignsModule } from './campaigns/campaigns.module';
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -18,9 +19,7 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
-import { AvailableMatchComponent } from './available-match/available-match.component';
-import { DisplayMatchesComponent } from './display-matches/display-matches.component';
-import { CampaignPageComponent } from './campaign-page/campaign-page.component';
+
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBZJI-R8jesec4R4H8OyElRNYsc5IGpPQM",
@@ -33,10 +32,8 @@ export const firebaseConfig = {
     measurementId: "G-HWZR120LVX"
 };
 
-const appRoutes: Routes = [   
-  {path: '', component: HomeComponent}, 
-  {path: 'matchingCampaigns', component: DisplayMatchesComponent}, 
-  { path: 'campaignPage/:campaignName/:campaignID/:campaignNpo/:startDate/:endDate/:city/:cText', component: CampaignPageComponent },
+const appRoutes: Routes = [
+  {path: '', component: HomeComponent}
 ];
 
 @NgModule({
@@ -44,16 +41,14 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    NavMenuComponent,
-    AvailableMatchComponent,
-    DisplayMatchesComponent,
-    CampaignPageComponent
+    NavMenuComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HomeSlidesModule,
     SignUpModule,
+    CampaignsModule,
     RouterModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
@@ -63,7 +58,6 @@ const appRoutes: Routes = [
   providers: [
     AuthService, AuthGuard, AngularFirestoreModule
   ],
-  bootstrap: [AppComponent],
-  exports: [AvailableMatchComponent, DisplayMatchesComponent, CampaignPageComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
