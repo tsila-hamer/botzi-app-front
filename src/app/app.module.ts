@@ -1,4 +1,3 @@
-import { Campaign } from './Campaign';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';

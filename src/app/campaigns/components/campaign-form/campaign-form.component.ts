@@ -1,16 +1,18 @@
-import { AuthService } from '../auth.service';
-import { Campaign } from './../Campaign';
+import { AuthService } from 'app/auth.service';
+import { Campaign } from 'app/campaigns/models/Campaign';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
 import { AngularFirestore } from 'angularfire2/firestore';
+
 @Component({
   selector: 'app-campaign-form',
   templateUrl: './campaign-form.component.html',
   styleUrls: ['./campaign-form.component.css']
 })
 export class CampaignFormComponent implements OnInit {
- campId:any = '12345432'; 
+ campId:any = '12345432';
+
   constructor(public route: ActivatedRoute, private db: AngularFirestore, private authService: AuthService) { }
 
   ngOnInit() {
@@ -27,7 +29,7 @@ export class CampaignFormComponent implements OnInit {
 //  // var campId = this.authService.getLoggedUserId();
 //   console.log("name" + name + " " + npo +"  " + cText);
 //   setTimeout(function(){
-//   }, 199900000); 
+//   }, 199900000);
 //   this.db.collection('/Campaigns').doc(this.campId).set({
 //     campaignName : name,
 //     campaignNpo : npo,
