@@ -13,6 +13,7 @@
         <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
         <span class="button button--navigation divider"></span>
         <a *ngIf="!user" class="login-btn" href="" (click)="onLogin()" routerLink="/login">Login</a>
+        <a *ngIf="user" class="login-btn" href="" routerLink="/matchingCampaigns" >Matches For you </a>
         <a *ngIf="user" class="login-btn" href="" (click)="onLogout()">Hi {{ authService.getLoggedUserName() }}</a>
       </div>
     </div>

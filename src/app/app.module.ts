@@ -24,6 +24,7 @@ import { NgModule } from '@angular/core';
 
 import { HomeSlidesModule } from './home-slides/home-slides.module';
 import { SignUpModule } from './sign-up/sign-up.module';
+import { CampaignsModule } from './campaigns/campaigns.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -51,6 +52,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HomeSlidesModule,
     SignUpModule,
+    CampaignsModule,
     RouterModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { SignUpComponent } from '../sign-up/sign-up.component';
 import { AngularFireAuthModule, AngularFireAuth } from  'angularfire2/auth';
 import * as firebase from 'firebase';
-import { AuthService } from 'app/auth.service';
+import { AuthService } from '../../../auth.service';
 
 @Component({
   selector: 'app-sign-in',

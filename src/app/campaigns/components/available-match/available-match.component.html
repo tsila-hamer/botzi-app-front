@@ -1,0 +1,29 @@
+
+  <div class="background">
+    <div class="container">
+      <div class="panel pricing-table">
+     
+        
+        <div class="pricing-plan">
+          <h2 class="pricing-header">{{ campaign.campaignName }}</h2>
+          <ul class="pricing-features">
+            <li class="pricing-features-item">{{ campaign.campaignID }}</li>
+            <li class="pricing-features-item">{{campaign.cText}}</li>
+            <li class="pricing-features-item">{{campaign.city}}</li>
+          </ul>
+          <br/>
+          <span class="pricing-price">{{ campaign.startDate + " - " + campaign.endDate}}</span>
+          <br/>
+          <a  [routerLink]="[ '/campaignPage',campaign.campaignName,campaign.campaignID,
+           campaign.campaignNpo,campaign.startDate,campaign.endDate,campaign.city,campaign.cText]">
+            Show more</a>
+
+
+        </div>
+        
+     
+        
+      </div>
+    </div>
+  </div>
+  

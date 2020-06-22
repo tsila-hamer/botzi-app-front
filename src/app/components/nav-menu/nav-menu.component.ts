@@ -1,10 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'app/auth.service';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import * as firebase from 'firebase';
 import { AngularFireAuthModule, AngularFireAuth } from  'angularfire2/auth';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-nav-menu',
@@ -12,7 +10,6 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./nav-menu.component.css']
 })
 export class NavMenuComponent implements OnInit {
-  userDetails;
   user: firebase.User;
 
   constructor(private authService: AuthService, private router: Router, private afAuth: AngularFireAuth) {
@@ -20,9 +17,7 @@ export class NavMenuComponent implements OnInit {
    }
 
   ngOnInit() {
-
   }
-
 
   onLogin() {
     this.authService.login();

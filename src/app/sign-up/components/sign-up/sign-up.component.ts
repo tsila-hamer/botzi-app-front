@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 //import { moveIn } from 'app/router.animations';
 import * as firebase from 'firebase';
 import { auth } from 'firebase/app';
-import { AuthService } from 'app/auth.service';
+import { AuthService } from '../../../auth.service';
 declare var FB: any;
 
 @Component({
@@ -24,6 +24,7 @@ export class SignUpComponent implements OnInit {
   @Input() type: string;
   @Input() signUpHeader: string;
   error: any;
+  isVol:boolean;
 
   constructor(public af: AngularFireAuth,private router: Router, private authService: AuthService, private db: AngularFirestore) {
   /*
@@ -37,7 +38,10 @@ export class SignUpComponent implements OnInit {
 
 
   ngOnInit() {
-
+ if (this.type === "volunteer" )
+ this.isVol = true;
+ else
+ this.isVol = false;
     (window as any).fbAsyncInit = function() {
       FB.init({
         appId      : '2692356157754889',
