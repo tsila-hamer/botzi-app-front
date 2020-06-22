@@ -9,6 +9,7 @@ export class AvailableMatchComponent implements OnInit {
 
   @Input() public campaign:Campaign;
 
+  
   constructor() { }
 
   ngOnInit() {

@@ -33,8 +33,9 @@ export const firebaseConfig = {
     measurementId: "G-HWZR120LVX"
 };
 
-const appRoutes: Routes = [
-  {path: '', component: HomeComponent}, { path: 'campaignPage', component: CampaignPageComponent },
+const appRoutes: Routes = [   
+  {path: '', component: HomeComponent}, 
+  { path: 'campaignPage/:campaignName/:campaignID/:campaignNpo/:startDate/:endDate/:city/:cText', component: CampaignPageComponent },
 ];
 
 @NgModule({

@@ -14,7 +14,9 @@
           <br/>
           <span class="pricing-price">{{ campaign.startDate + " - " + campaign.endDate}}</span>
           <br/>
-          <button class="btn-get-started scrollto animated fadeInUp" [routerLink]="['/campaignPage']">Show more</button>
+          <a class="btn btn-white-view" [routerLink]="[ '/campaignPage',campaign.campaignName,campaign.campaignID,
+           campaign.campaignNpo,campaign.startDate,campaign.endDate,campaign.city,campaign.cText]">
+            Show more</a>
 
 
         </div>
