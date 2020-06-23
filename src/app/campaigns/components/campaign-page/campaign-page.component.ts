@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
 import { AngularFirestore } from 'angularfire2/firestore';
-
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-campaign-page',
@@ -13,42 +13,46 @@ import { AngularFirestore } from 'angularfire2/firestore';
   styleUrls: ['./campaign-page.component.css']
 })
 export class CampaignPageComponent implements OnInit {
-  campaign: Campaign = {
-    campaignName: "Babysitting",
-    campaignID: 12345432,
-    campaignNpo: "Elem" ,
-    startDate: '02/08/2020',
-    endDate: '12/08/2020',
-    city: "Zfat",
-    cText: "Babysit kids whom parents are hospitalized",
-    img_url: "assets/img/campaigns/babysitter.jpg"};
+  campaign: Campaign;
+  private subscription: Subscription;
 
   constructor(public route: ActivatedRoute, private db: AngularFirestore, private authService: AuthService) {
-      console.log(this.getCampaignData());
-
-      /*
       this.route.params.subscribe(params => {
-          this.campaign.campaignName =  params['campaignName'];
-          this.campaign.campaignID = params['campaignID'];
-           this.campaign.campaignNpo =  params['campaignNpo'];
-          this.campaign.city = params['city'];
-          this.campaign.startDate =  params['startDate'];
-          this.campaign.endDate = params['endDate'];
-          this.campaign.cText = params['cText'];
-      });*/
+          console.log(params);
+          this.setCampaign(params['campaignID'])
+            .then(() => {
+            console.log(this.campaign);
+            })
+      });
 
    }
 
   ngOnInit() {
   }
 
-  getCampaignData() {
-    var id = this.campaign.campaignID.toString();
-    var docRef = this.db.firestore.collection("Campaigns").doc(id);
+  async setCampaign(id) {
+    await this.getCampaignData(id);
+  }
 
-    docRef.get().then(function(doc) {
+  getCampaignData(id) {
+    var id = id.toString();
+    var docRef = this.db.firestore.collection("Campaigns").doc(id);
+    var campaignFromFirebase: Campaign;
+
+    docRef.get().then((doc) =>
         if (doc.exists) {
-            console.log("Document data:", doc.data());
+            campaignFromFirebase = {
+              campaignID: doc.id,
+              campaignName: doc.data().campaignName,
+              campaignNpo: doc.data().campaignNpo,
+              startDate: doc.data().startDate,
+              endDate: doc.data().endDate,
+              city: doc.data().city,
+              cText: doc.data().cText,
+              img_url: doc.data().img_url
+            };
+            this.campaign = campaignFromFirebase;
+
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
@@ -56,7 +60,6 @@ export class CampaignPageComponent implements OnInit {
     }).catch(function(error) {
         console.log("Error getting document:", error);
     });
-
   }
 
   applyCampaign(){
