@@ -35,6 +35,12 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { OrganizationProfileComponent } from './components/organization-profile/organization-profile.component';
+import { TeamComponent } from './components/team/team.component';
+import { VolunteerProfileComponent } from './components/volunteer-profile/volunteer-profile.component';
+import { SkillsComponent } from './skills/skills.component';
+import { VolunteerAreaesComponent } from './volunteer-areaes/volunteer-areaes.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent}
@@ -45,7 +51,13 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    NavMenuComponent
+    NavMenuComponent,
+    ContactUsComponent,
+    OrganizationProfileComponent,
+    TeamComponent,
+    VolunteerProfileComponent,
+    SkillsComponent,
+    VolunteerAreaesComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
