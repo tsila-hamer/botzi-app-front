@@ -1,138 +1,84 @@
-<section id="our-team" class="our-team">
-  <div class="row py-5"> 
-    <div class="col">
-      <a target="_blank" href="https://www.linkedin.com/in/snir-sharristh-87654b15b/"> 
-      <img src="https://levtech.jct.ac.il/img/Hack@Tal3/Snir%20Sharristh.jpg" class="rounded-circle z-depth-1 squareItUp " alt="Snir Sharristh"></a>
-      <h5 class="font-weight-bold mt-4 mb-3">Snir Sharristh</h5>
-      <p class=" redy-text bitSmaller">Mentor in Hakatom#3 Tech Lead at MadeInJLM iOS development in 200APPS<br>
-          <strong class="ltrKiller forceLTR " style="direction: ltr !important;">
-              <span class="ltrFIX" style="direction: ltr !important;"> </span>
-          </strong>
-      </p>
-  </div>
-  <div class="col">
-    <a target="_blank" href="https://www.linkedin.com/in/daniel-shriki-30442a107/"> 
-    <img src="https://scontent.fsdv4-1.fna.fbcdn.net/v/t1.0-9/67501530_10217841603663899_2622390542834597888_n.jpg?_nc_cat=103&_nc_sid=85a577&_nc_ohc=wRkhu2fuw0oAX_o8sRr&_nc_ht=scontent.fsdv4-1.fna&oh=f382d5703654597de2a03bbd2315db95&oe=5F166E7D" class="rounded-circle z-depth-1 squareItUp " alt="Daniel Shriki"></a>
-    <h5 class="font-weight-bold mt-4 mb-3">Daniel Shriki</h5>
-    <p class=" redy-text bitSmaller"> <br>
-        <strong class="ltrKiller forceLTR " style="direction: ltr !important;">
-            <span class="ltrFIX" style="direction: ltr !important;"> </span>
-        </strong>
-    </p>
-</div>
-<div class="col">
-  <a target="_blank" href="https://www.facebook.com/moshiko.bibi.5"> 
-  <img src="https://scontent.fsdv4-1.fna.fbcdn.net/v/t1.0-9/12112340_10208116425774278_4843183569054358126_n.jpg?_nc_cat=103&_nc_sid=85a577&_nc_ohc=GDgUPr2oytwAX-bHQv2&_nc_ht=scontent.fsdv4-1.fna&oh=74b1625b7721f2ca13663cd7e4a0de76&oe=5F143F6E" class="rounded-circle z-depth-1 squareItUp " alt="Moshiko Bibi"></a>
-  <h5 class="font-weight-bold mt-4 mb-3">Moshiko Bibi</h5>
-  <p class=" redy-text bitSmaller"> <br>
-      <strong class="ltrKiller forceLTR " style="direction: ltr !important;">
-          <span class="ltrFIX" style="direction: ltr !important;"> </span>
-      </strong>
-  </p>
-</div>
-<div class="col">
-  <a target="_blank" href="https://www.linkedin.com/in/tsila-hamer-92a42177/"> 
-  <img src="https://scontent.fsdv4-1.fna.fbcdn.net/v/t1.0-9/p960x960/79984633_10220127648968803_7082535688263958528_o.jpg?_nc_cat=105&_nc_sid=85a577&_nc_ohc=YOqIp-r9c4AAX_l5Tp1&_nc_ht=scontent.fsdv4-1.fna&_nc_tp=6&oh=3bf71b02ead5512525427153099cb068&oe=5F13B8E3" class="rounded-circle z-depth-1 squareItUp " alt="Tsila Hamar Hadad"></a>
-  <h5 class="font-weight-bold mt-4 mb-3">Tsila Hamar Hadad</h5>
-  <p class=" redy-text bitSmaller"> <br>
-      <strong class="ltrKiller forceLTR " style="direction: ltr !important;">
-          <span class="ltrFIX" style="direction: ltr !important;"> </span>
-      </strong>
-  </p>
-</div>          
-</div>
-
-  <div class="row py-5">
-    <div class="col">
-      <a target="_blank" href="https://www.linkedin.com/in/anaelle-ohayon-146ab4196/"> 
-      <img src="assets\img\team\anaelle.jpg" class="rounded-circle z-depth-1 squareItUp " alt="Anaelle Ohayon"></a>
-      <h5 class="font-weight-bold mt-4 mb-3">Anaelle Ohayon</h5>
-      <p class=" redy-text bitSmaller"> <br>
-          <strong class="ltrKiller forceLTR " style="direction: ltr !important;">
-              <span class="ltrFIX" style="direction: ltr !important;"> </span>
-          </strong>
-      </p>
+<section id="volunteer-profile" class="volunteer-profile">
+    <div class="row">
+      <div class="col">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h2>Vollunteer Profile</h2>      
+      </div>  
+      <div class="row">        
+        <div class="col-md-8 order-md-1"> 
+          <div class="row">
+            <h4 class="mb-3" id="ceb">Update Your Details:</h4>  
+  
+            <!--div class="col">
+            </div>
+            <div class="col">
+              <button class="btn btn-primary btn-lg btn-block" (click)="wantToUpdate()" type="submit">Click To Update</button> 
+            </div-->
+          </div >           
+          <form class="needs-validation" novalidate="">
+            <div class="mb-3">            
+              
+                <label for="volFullName">Volunteer Name:</label>
+                <input required="" value="" placeholder="" id="volFullName" class="form-control" type="text">
+                <div class="invalid-feedback">
+                  Valid organization name is required.
+                </div>
+              
+            </div>
+            <div class="mb-3">
+              <label for="volNum">Phone Number:</label>
+              <input type="tel" id="volNum" required="">           
+            </div>
+            <div class="mb-3">
+              <label for="volEmail">Mail Adress:</label>
+              <input type="text" class="form-control" id="volEmail" type="email" required="">
+              <div class="invalid-feedback">
+                Valid mail adress is required.
+              </div>
+            </div>        
+            <div class="mb-3">
+              <label for="volCity">Volunteering City:</label>
+              <input type="text" class="form-control" id="volCity" placeholder=" " required="">            
+            </div>          
+            <div class="mb-3">
+              <label for="volAvailable">Availablity:</label>
+              <input type="text" id="volAvailable" required="">           
+            </div>  
+            <div class="mb-3">
+              <label for="volSkills">skills:</label>
+              <app-skills id="volSkills"></app-skills>           
+            </div>  
+            
+            <hr class="mb-4">  
+            <button class="btn btn-primary btn-lg btn-block" type="update" (click)="updateOrganization()" >Update</button>
+          </form>
+        </div>
+      </div>
+      </div>
+    
+    <!--div class="background">
+      <div class="container">
+        <div class="panel pricing-table">
+          
+          <div class="pricing-plan">
+            <img class="bd-placeholder-img rounded-circle" src="https://www.gluna.org/resources/EmailTemplates/Volume%202%20Issue%201/images/grow-membership.jpg" width="140" height="140"/>
+    
+            <h2 class="pricing-header">{{orgName}}</h2>
+            <ul class="pricing-features">
+              <li class="pricing-features-item">{{orgAddres}}</li>
+              <li class="pricing-features-item">{{orgNum}}</li>
+              <li class="pricing-features-item">{{orgEmail}}</li>
+            </ul>
+            <We should add a volunteer area skills >
+            <a href="#/" class="pricing-button">Volunteer Area</a>
+          </div>
+                      
+        </div>
+      </div>
+    </div-->
+      <div class=" col">
+        <h4 >My Campaigns:</h4>
+     </div>
     </div>
-    <div class="col">
-      <a target="_blank" href="https://www.linkedin.com/in/avital-parasha-a21a4819a/"> 
-      <img src="assets\img\team\hodaya.jpg" class="rounded-circle z-depth-1 squareItUp " alt="Hodaya Pozen"></a>
-      <h5 class="font-weight-bold mt-4 mb-3">Hodaya Pozen</h5>
-      <p class=" redy-text bitSmaller"> <br>
-          <strong class="ltrKiller forceLTR " style="direction: ltr !important;">
-              <span class="ltrFIX" style="direction: ltr !important;"> </span>
-          </strong>
-      </p>
-    </div>
-    <div class="col">
-      <a target="_blank" href="https://www.linkedin.com/in/avital-parasha-a21a4819a/"> 
-      <img src="assets\img\team\Tali.jpg" class="rounded-circle z-depth-1 squareItUp " alt="Avital Parasha"></a>
-      <h5 class="font-weight-bold mt-4 mb-3">Avital Parasha</h5>
-      <p class=" redy-text bitSmaller"> <br>
-          <strong class="ltrKiller forceLTR " style="direction: ltr !important;">
-              <span class="ltrFIX" style="direction: ltr !important;"> </span>
-          </strong>
-      </p>
-    </div>
-    <div class="col">
-      <a target="_blank" href="https://www.linkedin.com/in/yael-elisha-18a1441b0/"> 
-      <img src="assets\img\team\yael.jpg" class="rounded-circle z-depth-1 squareItUp " alt="Yael Elisha"></a>
-      <h5 class="font-weight-bold mt-4 mb-3">Yael Elisha</h5>
-      <p class=" redy-text bitSmaller"> <br>
-          <strong class="ltrKiller forceLTR " style="direction: ltr !important;">
-              <span class="ltrFIX" style="direction: ltr !important;"> </span>
-          </strong>
-      </p>
-    </div>
-    <div class="col">
-      <a target="_blank" href="https://www.linkedin.com/in/tzviya-laniado-2191011a4/"> 
-      <img src="assets\img\team\tzviya.jpg" class="rounded-circle z-depth-1 squareItUp " alt="Tzviya Laniado"></a>
-      <h5 class="font-weight-bold mt-4 mb-3">Tzviya Laniado</h5>
-      <p class=" redy-text bitSmaller"> <br>
-          <strong class="ltrKiller forceLTR " style="direction: ltr !important;">
-              <span class="ltrFIX" style="direction: ltr !important;"> </span>
-          </strong>
-      </p>
-    </div>
-    <div class="col">
-      <a target="_blank" href="https://www.linkedin.com/in/ayala-atzmon-87596719a/"> 
-      <img src="assets\img\team\ayala.jpg" class="rounded-circle z-depth-1 squareItUp " alt="Ayala Atzmon"></a>
-      <h5 class="font-weight-bold mt-4 mb-3">Ayala Atzmon</h5>
-      <p class=" redy-text bitSmaller"> <br>
-          <strong class="ltrKiller forceLTR " style="direction: ltr !important;">
-              <span class="ltrFIX" style="direction: ltr !important;"> </span>
-          </strong>
-      </p>
-    </div>
-    <div class="col">
-      <a target="_blank" href="https://www.linkedin.com/in/anaelle-ohayon-146ab4196/"> 
-      <img src="assets\img\team\Hagit.jpg" class="rounded-circle z-depth-1 squareItUp " alt="Chagit Itzkovich"></a>
-      <h5 class="font-weight-bold mt-4 mb-3">Chagit Itzkovich</h5>
-      <p class=" redy-text bitSmaller"> <br>
-          <strong class="ltrKiller forceLTR " style="direction: ltr !important;">
-              <span class="ltrFIX" style="direction: ltr !important;"> </span>
-          </strong>
-      </p>
-    </div>
-    <div class="col">
-      <a target="_blank" href="https://www.linkedin.com/in/simha-ben-david-43a5421a3/"> 
-      <img src="assets\img\team\simha.jpg" class="rounded-circle z-depth-1 squareItUp " alt="Simha Ben-David"></a>
-      <h5 class="font-weight-bold mt-4 mb-3">Simha Ben-David</h5>
-      <p class=" redy-text bitSmaller"> <br>
-          <strong class="ltrKiller forceLTR " style="direction: ltr !important;">
-              <span class="ltrFIX" style="direction: ltr !important;"> </span>
-          </strong>
-      </p>
-    </div>
-    <div class="col">
-      <a target="_blank" href="https://www.linkedin.com/in/osnat-orenstein-1981091b1/"> 
-      <img src="assets\img\team\osnat.jpg" class="rounded-circle z-depth-1 squareItUp " alt="Osnat Orenstein"></a>
-      <h5 class="font-weight-bold mt-4 mb-3">Osnat Orenstein</h5>
-      <p class=" redy-text bitSmaller"> <br>
-          <strong class="ltrKiller forceLTR " style="direction: ltr !important;">
-              <span class="ltrFIX" style="direction: ltr !important;"> </span>
-          </strong>
-      </p>
-    </div>
-  </div>
-
-</section>
+  </section>
