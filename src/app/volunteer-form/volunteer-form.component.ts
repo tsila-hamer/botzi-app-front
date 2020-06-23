@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
 import * as firebase from 'firebase';
 import { AuthService } from '../auth.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
 import { AngularFirestore } from 'angularfire2/firestore';
+
 declare var FB: any;
 @Component({
   selector: 'app-volunteer-form',
@@ -20,12 +21,15 @@ export class VolunteerFormComponent implements OnInit {
 
   ngOnInit() {
   }
+  
   SubmitVolunteerForm(){
     var userId = this.authService.getLoggedUserId();
     console.log("userId"+" "+userId);
     this.db.collection('/Volunteers').doc(userId).update({
       hodaya : "hodaya"
     }).then(res => {}, err => err); 
-
   }
+
+  
+
 }
