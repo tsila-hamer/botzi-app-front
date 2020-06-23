@@ -9,12 +9,9 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignUpOrganizationComponent } from './components/sign-up-organization/sign-up-organization.component';
 import { SignUpVolunteerComponent } from './components/sign-up-volunteer/sign-up-volunteer.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
-import {OrganizationFormComponent} from '../components/organization-form/organization-form.component';
+
 const routes: Routes = [
   {path: 'login', component: SignInComponent},
-  {path: 'volunteerForm', component: VolunteerFormComponent},
-  {path: 'OrganizationForm', component: OrganizationFormComponent},
-  {path: 'campaignForm', component: CampaignFormComponent},
   {path: 'sign-up',
   //component: SignUpComponent,
   //canActivate[AuthGuard],
@@ -36,9 +33,6 @@ const routes: Routes = [
     SignUpComponent,
     SignUpOrganizationComponent,
     SignUpVolunteerComponent,
-    CampaignFormComponent,
-    OrganizationFormComponent,
-    VolunteerFormComponent,
     SignInComponent
   ],
   exports: [
