@@ -1,8 +1,7 @@
-import { Campaign } from 'app/campaigns/models/Campaign';
-import { Component, OnInit } from '@angular/core';
+import { Campaign } from '../../../campaigns/models/Campaign';
+import { Component, OnInit, Input } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase';
-
 @Component({
   selector: 'app-display-matches',
   templateUrl: './display-matches.component.html',
@@ -32,11 +31,14 @@ export class DisplayMatchesComponent implements OnInit {
     img_url: "assets/img/campaigns/medicine.jpg"
     }
   ];*/
-
+@Input() appliedAllready: boolean;
   public campaignsList: Campaign[] = [];
 
   constructor(private db: AngularFirestore) {
+    if(!this.appliedAllready)
     this.campaignsList = this.getAllCampaign();
+    // else
+    // this.campaignsList = getVolunteersCampaigns();
     console.log(this.campaignsList);
   }
 

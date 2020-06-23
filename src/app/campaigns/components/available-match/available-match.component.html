@@ -5,7 +5,8 @@
     <p>{{campaign.cText}} ({{campaign.city}}) </p>
     <p>{{ campaign.startDate + " - " + campaign.endDate}}</p>
     <p>
-    <a  [routerLink]="[ '/campaign', campaign.campaignID]">
+      
+    <a *ngIf="!appliedAllready" [routerLink]="[ '/campaign', campaign.campaignID]">
             Show more</a>
     </p>
   </div>

@@ -2,14 +2,14 @@
       <div class="container">
 
         <div class="section-title">
-          <span>Your Matches</span>
-          <h2>Your Matches</h2>
-          <p>Let's volunteer!</p>
+          <span *ngIf="!appliedAllready">Your Matches</span>
+          <h2 *ngIf="!appliedAllready">Your Matches</h2>
+          <p *ngIf="!appliedAllready">Let's volunteer!</p>
         </div>
 
         <div class="row">
 
-          <app-available-match *ngFor="let campaign of campaignsList" [campaign] = "campaign"></app-available-match>
+          <app-available-match *ngFor="let campaign of campaignsList" [campaign] = "campaign" [appliedAllready] = "appliedAllready"></app-available-match>
 
         </div>
 
