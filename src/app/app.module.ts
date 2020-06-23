@@ -37,6 +37,7 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
+import { OrganizationFormComponent } from './components/organization-form/organization-form.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent}
@@ -64,6 +65,7 @@ const appRoutes: Routes = [
   providers: [
     AuthService, AuthGuard, AngularFirestoreModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: []
 })
 export class AppModule { }
