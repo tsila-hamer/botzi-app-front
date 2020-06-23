@@ -40,7 +40,7 @@ export class CampaignPageComponent implements OnInit {
     var campaignFromFirebase: Campaign;
 
     docRef.get().then((doc) =>
-        if (doc.exists) {
+     {   if (doc.exists) {
             campaignFromFirebase = {
               campaignID: doc.id,
               campaignName: doc.data().campaignName,

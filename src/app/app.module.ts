@@ -26,6 +26,7 @@ import { NgModule } from '@angular/core';
 import { HomeSlidesModule } from './home-slides/home-slides.module';
 import { SignUpModule } from './sign-up/sign-up.module';
 import { CampaignsModule } from './campaigns/campaigns.module';
+import { UserFormsModule } from './forms/user-forms.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -46,7 +47,7 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     NavMenuComponent
-  ],
+    ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
     BrowserModule,
@@ -54,6 +55,7 @@ const appRoutes: Routes = [
     HomeSlidesModule,
     SignUpModule,
     CampaignsModule,
+    UserFormsModule,
     RouterModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
