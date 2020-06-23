@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SkillsComponent } from '../../skills/skills.component';
+import { SkillsComponent } from 'app/profiles/components/skills/skills.component';
 
 @Component({
   selector: 'app-volunteer-profile',
@@ -13,8 +13,8 @@ export class VolunteerProfileComponent implements OnInit {
   volCity: string;
   volAvailable: string;
   volSkills: SkillsComponent;
-  
-  constructor() { 
+
+  constructor() {
 
   }
   updateOrganization(){
@@ -24,7 +24,7 @@ export class VolunteerProfileComponent implements OnInit {
     this.volCity = (<HTMLInputElement>document.getElementById("volCity")).value;
     this.volAvailable = (<HTMLInputElement>document.getElementById("volAvailable")).value;
     //this.volSkills = (<HTMLInputElement>document.getElementById("volSkills")).value;
-  
+
 
   }
   ngOnInit() {

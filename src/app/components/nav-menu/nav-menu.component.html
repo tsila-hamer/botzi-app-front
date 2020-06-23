@@ -15,7 +15,8 @@
         <a *ngIf="!user" class="login-btn" href="" (click)="onLogin()" routerLink="/login">Login</a>
         <a *ngIf="user" class="login-btn" href="" routerLink="/campaignForm" >add a campaign </a>
         <a *ngIf="user" class="login-btn" href="" routerLink="/matchingCampaigns" >Matches For you </a>
-        <a *ngIf="user" class="login-btn" href="" (click)="onLogout()">Hi {{ authService.getLoggedUserName() }}</a>
+        <a *ngIf="user" class="login-btn" href="">Hi {{ authService.getLoggedUserName() }}</a>
+        <a *ngIf="user" class="login-btn" href="" (click)="onLogout()">Logout</a>
       </div>
     </div>
   </section>
@@ -24,10 +25,10 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <div class="col">
+      <div class="col" style="max-width: 100px;">
         <img class="rounded-circle z-depth-1 squareItUp" src="assets\img\icons\botzi.png" width="70" height="70">
       </div>
-      <div class="col">        
+      <div class="col">
         <h1 class="text-light"><a href="index.html">Botzi</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets\img\icons\botzi.png" alt="" class="img-fluid"></a>-->
