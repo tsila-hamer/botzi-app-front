@@ -53,7 +53,7 @@ export class AuthService {
   getLoggedUserId() {
     this.currentUser = firebase.auth().currentUser;
     console.log(this.currentUser);
-    if (this.currentUser && this.currentUser.uid) {
+    if (this.currentUser && this.currentUser.uid && this.loggedIn) {
       return this.currentUser.uid;
     } else {
       return '';
@@ -62,11 +62,12 @@ export class AuthService {
 
   isLoggedIn() {
     console.log(firebase.auth().currentUser);
-    if (firebase.auth().currentUser) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.loggedIn;
+    // if (firebase.auth().currentUser) {
+    //   return true;
+    // } else {
+    //   return false;
+    // }
   }
 
 }
