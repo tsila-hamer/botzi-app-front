@@ -26,6 +26,7 @@ export class NavMenuComponent implements OnInit {
   }
 
   onLogout() {
+    this.afAuth.auth.signOut();
     this.authService.logout();
   }
 

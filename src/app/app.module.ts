@@ -27,6 +27,7 @@ import { HomeSlidesModule } from './home-slides/home-slides.module';
 import { SignUpModule } from './sign-up/sign-up.module';
 import { CampaignsModule } from './campaigns/campaigns.module';
 import { UserFormsModule } from './forms/user-forms.module';
+import { ProfilesModule } from './profiles/profiles.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -37,10 +38,7 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { OrganizationProfileComponent } from './components/organization-profile/organization-profile.component';
 import { TeamComponent } from './components/team/team.component';
-import { VolunteerProfileComponent } from './components/volunteer-profile/volunteer-profile.component';
-import { SkillsComponent } from './skills/skills.component';
 import { VolunteerAreaesComponent } from './volunteer-areaes/volunteer-areaes.component';
 
 const appRoutes: Routes = [
@@ -54,10 +52,7 @@ const appRoutes: Routes = [
     AboutComponent,
     NavMenuComponent,
     ContactUsComponent,
-    OrganizationProfileComponent,
     TeamComponent,
-    VolunteerProfileComponent,
-    SkillsComponent,
     VolunteerAreaesComponent
   ],
   imports: [
