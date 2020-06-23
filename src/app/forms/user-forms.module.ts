@@ -7,11 +7,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CampaignFormComponent } from './components/campaign-form/campaign-form.component';
 import { VolunteerFormComponent } from './components/volunteer-form/volunteer-form.component';
-import { OrganizationFormComponent } from '../components/organization-form/organization-form.component';
+import { OrganizationFormComponent } from './components/organization-form/organization-form.component';
 
 const routes: Routes = [
   {path: 'volunteerForm', component: VolunteerFormComponent},
-  {path: 'campaignForm', component: CampaignFormComponent}
+  {path: 'campaignForm', component: CampaignFormComponent},
   {path: 'OrganizationForm', component: OrganizationFormComponent}
 
 ];
