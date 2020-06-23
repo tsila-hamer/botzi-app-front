@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+    
 //import { AuthGuard } from '../auth/auth.guard';
 
 import { AvailableMatchComponent } from './components/available-match/available-match.component';
@@ -27,15 +27,12 @@ const routes: Routes = [
   declarations: [
     AvailableMatchComponent,
     DisplayMatchesComponent,
-    CampaignPageComponent,
-    CampaignFormComponent
+    CampaignPageComponent
   ],
   exports: [
     AvailableMatchComponent,
     DisplayMatchesComponent,
     CampaignPageComponent,
-    RouterModule,
-    CampaignFormComponent
-  ]
+    RouterModule  ]
 })
 export class CampaignsModule { }

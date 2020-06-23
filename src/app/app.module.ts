@@ -1,3 +1,5 @@
+import { CampaignFormComponent } from './campaigns/components/campaign-form/campaign-form.component';
+import { VolunteerFormComponent } from './volunteer-form/volunteer-form.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
@@ -46,7 +48,7 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     NavMenuComponent
-  ],
+    ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
     BrowserModule,
