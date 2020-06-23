@@ -1,5 +1,3 @@
-import { CampaignFormComponent } from './campaigns/components/campaign-form/campaign-form.component';
-import { VolunteerFormComponent } from './volunteer-form/volunteer-form.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
@@ -28,6 +26,7 @@ import { NgModule } from '@angular/core';
 import { HomeSlidesModule } from './home-slides/home-slides.module';
 import { SignUpModule } from './sign-up/sign-up.module';
 import { CampaignsModule } from './campaigns/campaigns.module';
+import { UserFormsModule } from './forms/user-forms.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -37,7 +36,6 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
-import { OrganizationFormComponent } from './components/organization-form/organization-form.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent}
@@ -57,6 +55,7 @@ const appRoutes: Routes = [
     HomeSlidesModule,
     SignUpModule,
     CampaignsModule,
+    UserFormsModule,
     RouterModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,

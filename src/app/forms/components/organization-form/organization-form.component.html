@@ -6,9 +6,9 @@
   </div>
 
   <div class="row">
-    
-     
-    <div class="col-md-8 order-md-1"> 
+
+
+    <div class="col-md-8 order-md-1">
       <h4 class="mb-3" id="ceb">Please enter your organization
     details:</h4>
 
@@ -17,10 +17,10 @@
       <input type="file" id="img" name="img" accept="image/*">
       <input  type="submit">
     </form-->
-     
-      <form class="needs-validation" novalidate="">
+
+      <form class="needs-validation" novalidate="" #formData="ngForm" (ngSubmit)="SubmitOrganizationForm(formData)">
         <div class="row">
-          
+
           <div class="col-md-6 mb-3">
             <div class="invalid-feedback">
               Valid organization name is required.
@@ -28,7 +28,7 @@
           </div>
           <div class="col-md-6 mb-3">
             <label for="Contact Name">Organization Number:</label>
-            <input type="text" class="form-control" id="organizationNumber" placeholder="" value="" required="">
+            <input type="text" class="form-control" id="organizationNumber" placeholder="" value="" name="organizationNumber" required ngModel>
             <div class="invalid-feedback">
               Valid name is required.
             </div>
@@ -36,53 +36,47 @@
         </div>
         <div class="mb-3">
           <label for="oText">About The Organization:</label>
-          <input type="text" id="oText" required="">
-         
+          <input type="text" id="oText" name="oText" required ngModel>
         </div>
-      
-        
-        
-        
-      
 
         <div class="mb-3">
           <label for="location">Organization Main Location:</label>
-          <input type="tel" class="form-control" id="location" placeholder=" " required="">
-          
+          <input type="tel" class="form-control" id="location" placeholder=" " name="location" required ngModel>
+
         </div>
-        
+
         <div class="mb-3">
           <label for="contactName">Contact Name:</label>
-          <input type="text" id="contactName" required="">
-         
+          <input type="text" id="contactName" name="contactName" required ngModel>
+
         </div>
 
         <div class="mb-3">
           <label for="phoneNumber">Contact Phone Number:</label>
-          <input type="text" id="phoneNumber" type=tel  required="">
-         
+          <input type="text" id="phoneNumber" type=tel  name="phoneNumber" required ngModel>
+
         </div>
 
 
         <div class="mb-3">
           <label for="mail">Mail Adress:</label>
-          <input type="text" class="form-control" id="mail" type="email" required="">
+          <input type="text" class="form-control" id="mail" type="email" name="mail" required ngModel>
           <div class="invalid-feedback">
-            Valid mail adress is required.
+            Valid mail address is required.
           </div>
         </div>
-        
-        
-          
-      
+
+
+
+
       <!-- dribbble -->
-       
-        <hr class="mb-4">   
-        <button routerLink="/" type="button" (click)="SubmitOrganizationForm()">Submit</button>
+
+        <hr class="mb-4">
+        <button routerLink="/" type="submit" (click)="SubmitOrganizationForm(formData)">Submit</button>
       </form>
     </div>
   </div>
 
-  
+
 </div>
 </body></html>
