@@ -1,44 +1,12 @@
 <div class="col-sm-6" >
   <div class="icon-box" style="width: 600px;">
     <i class="icofont-tasks-alt"></i>
-    <h4 style="font-size:20px;"><a [routerLink]="[ '/campaignPage',campaign.campaignName,campaign.campaignID,
-           campaign.campaignNpo,campaign.startDate,campaign.endDate,campaign.city,campaign.cText]">{{ campaign.campaignName }}</a></h4>
+    <h4 style="font-size:20px;"><a [routerLink]="[ '/campaign', campaign.campaignID]">{{ campaign.campaignName }}</a></h4>
     <p>{{campaign.cText}} ({{campaign.city}}) </p>
     <p>{{ campaign.startDate + " - " + campaign.endDate}}</p>
     <p>
-    <a  [routerLink]="[ '/campaignPage',campaign.campaignName,campaign.campaignID,
-           campaign.campaignNpo,campaign.startDate,campaign.endDate,campaign.city,campaign.cText]">
+    <a  [routerLink]="[ '/campaign', campaign.campaignID]">
             Show more</a>
     </p>
   </div>
 </div>
-
-<!--
-  <div class="background">
-    <div class="container">
-      <div class="panel pricing-table">
-
-
-        <div class="pricing-plan">
-          <h2 class="pricing-header">{{ campaign.campaignName }}</h2>
-          <ul class="pricing-features">
-            <li class="pricing-features-item">{{ campaign.campaignID }}</li>
-            <li class="pricing-features-item">{{campaign.cText}}</li>
-            <li class="pricing-features-item">{{campaign.city}}</li>
-          </ul>
-          <br/>
-          <span class="pricing-price">{{ campaign.startDate + " - " + campaign.endDate}}</span>
-          <br/>
-          <a  [routerLink]="[ '/campaignPage',campaign.campaignName,campaign.campaignID,
-           campaign.campaignNpo,campaign.startDate,campaign.endDate,campaign.city,campaign.cText]">
-            Show more</a>
-
-
-        </div>
-
-
-
-      </div>
-    </div>
-  </div>
-  -->

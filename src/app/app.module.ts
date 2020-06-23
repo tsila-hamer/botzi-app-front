@@ -19,6 +19,7 @@ export const firebaseConfig = {
 
 AngularFireModule.initializeApp(firebaseConfig);
 firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
 
 import { NgModule } from '@angular/core';
 
