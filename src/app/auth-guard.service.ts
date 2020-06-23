@@ -3,7 +3,7 @@ import { RouterStateSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 
-import { AuthService } from './auth.service';
+import { AuthService } from 'app/auth.service';
 
 
 @Injectable()
