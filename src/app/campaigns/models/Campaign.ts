@@ -14,5 +14,6 @@ export interface Campaign {
    startDate:any,
    endDate:any,
    city:string,
-   cText?:string
+   cText?:string,
+   img_url?:string
 }

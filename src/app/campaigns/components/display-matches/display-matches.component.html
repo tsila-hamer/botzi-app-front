@@ -1,18 +1,19 @@
+   <section id="services" class="services section-bg">
+      <div class="container">
 
-<div class="container">
-  <div class="row content">
-    <div class="col-lg-6">
-      <br/>
-      <br/>
-      <ul style="list-style: none;">
-        <li *ngFor="let campaign of campaignsList">
-          <app-available-match [campaign] = "campaign"></app-available-match>
-          <br/>
-          <br/>
-        </li>      
-      </ul>
+        <div class="section-title">
+          <span>Your Matches</span>
+          <h2>Your Matches</h2>
+          <p>Let's volunteer!</p>
+        </div>
 
-</div>
-</div>
-</div>
+        <div class="row">
+
+          <app-available-match *ngFor="let campaign of campaignsList" [campaign] = "campaign"></app-available-match>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
 

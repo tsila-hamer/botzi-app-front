@@ -13,7 +13,7 @@ import { Campaign } from './models/Campaign';
 
 const routes: Routes = [
   {path: 'matchingCampaigns', component: DisplayMatchesComponent},
-  { path: 'campaignPage/:campaignName/:campaignID/:campaignNpo/:startDate/:endDate/:city/:cText', component: CampaignPageComponent },
+  { path: 'campaign/:campaignID', component: CampaignPageComponent },
 ];
 
 @NgModule({

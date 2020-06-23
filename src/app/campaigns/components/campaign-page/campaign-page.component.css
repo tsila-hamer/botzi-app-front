@@ -1,0 +1,24 @@
+h2 {
+    text-align: center;
+    padding: 30px;
+}
+
+.apply-btn {
+    text-align: center;
+    padding: 30px;
+}
+
+.apply-btn button {
+  padding: .6rem 4rem;
+  font-weight: 600;
+  font-size: larger;
+  color: #757c81;
+  border: none;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.42), 0 1px 4px rgba(0,0,0,.12);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.42), 0 1px 4px rgba(0,0,0,.12);
+  border-radius: 4px;
+}
+
+.apply-btn button:hover {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), 0 1px 4px rgba(0,0,0,.75);
+  }
