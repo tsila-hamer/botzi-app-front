@@ -11,7 +11,8 @@
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3" id="ceb">Please Enter Your Campaign
     Details:</h4>
-      <form class="needs-validation" novalidate="">
+
+      <form class="needs-validation" novalidate="" #formData="ngForm" (ngSubmit)="submitCampaignForm(formData)">
         <div class="row">
 
 
@@ -19,14 +20,13 @@
 
             <form action="/action_page.php">
               <label for="img">Select image:</label>
-              <input type="file" id="img" name="img" accept="image/*">
-              <input type="submit">
+              <input type="file" id="img" name="img_url" accept="image/*" required ngModel>
             </form>
 
             <label for="Name">Campaign Name:</label>
 
 
-            <input required="" value="" placeholder="" id="campaignName" class="form-control" type="text">
+            <input required="" value="" placeholder="" id="campaignName" class="form-control" type="text" name="campaignName" required ngModel>
             <div class="invalid-feedback">
               Valid name is required.
             </div>
@@ -34,48 +34,46 @@
 
         </div>
         <label for="Name">Organization Name:</label>
-        <input type="text" class="form-control" id="campaignNpo">
+        <input type="text" class="form-control" id="campaignNpo" name="campaignNpo" required ngModel>
         <div class="invalid-feedback">
           Valid name is required.
         </div>
 
         <div class="mb-3">
           <label for="oText">About The Campaign:</label>
-          <input type="text" id="cText" required="">
+          <input type="text" id="cText" name="cText" required ngModel>
 
         </div>
 
 
         <div class="mb-3">
           <label for="oText">Campaign City:</label>
-          <input type="text" id="city" required="">
+          <input type="text" id="city" name="city" required ngModel>
 
         </div>
 
 
-
-
         <div class="mb-3">
           <label for="Organization Number">Organization Number:</label>
-          <input type="tel" class="form-control" id="organizationNumber" placeholder=" " required="">
+          <input type="tel" class="form-control" id="organizationNumber" placeholder=" " name="organizationNumber" required ngModel>
 
         </div>
 
        <div class="mb-3">
           <label for="neededSkills">Required Skills:<span class="text-muted"></span></label>
-          <input type="text" class="form-control" id="required Skills:">
+          <input type="text" class="form-control" id="skills" name="skills" required ngModel>
         </div>
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="Start Date"> Start Date</label>
-            <input type="date" class="form-control" id="startDate" placeholder="" value="" required="">
+            <input type="date" class="form-control" id="startDate" placeholder="" value="" name="startDate" required ngModel>
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
           </div>
           <div class="col-md-6 mb-3">
             <label for="Last Date">End Date</label>
-            <input type="date" class="form-control" id="endDate" placeholder="00:00" value="" required="">
+            <input type="date" class="form-control" id="endDate" placeholder="00:00" value="" name="endDate" required ngModel>
             <div class="invalid-feedback">
               Valid last name is required.
             </div>
@@ -88,7 +86,7 @@
 
         <hr class="mb-4">
         <!-- (click)="onClick()"  will be here when it works  -->
-        <button  class="btn btn-primary btn-lg btn-block" type="submit" >Submit</button>
+        <button  class="btn btn-primary btn-lg btn-block" type="submit" (click)="submitCampaignForm(formData)">Submit</button>
       </form>
     </div>
   </div>

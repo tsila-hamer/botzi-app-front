@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class AvailableMatchComponent implements OnInit {
 
   @Input() public campaign:Campaign;
-
+  @Input() public appliedAlready;
   constructor() {
 
   }

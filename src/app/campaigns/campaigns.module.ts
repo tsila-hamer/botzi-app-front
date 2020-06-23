@@ -8,10 +8,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AvailableMatchComponent } from './components/available-match/available-match.component';
 import { DisplayMatchesComponent } from './components/display-matches/display-matches.component';
 import { CampaignPageComponent } from './components/campaign-page/campaign-page.component';
-import { CampaignFormComponent } from './components/campaign-form/campaign-form.component';
 import { Campaign } from './models/Campaign';
+import { VolCampaignsListComponent } from './components/vol-campaigns-list/vol-campaigns-list.component';
 
 const routes: Routes = [
+  {path: 'volCampaigns', component: VolCampaignsListComponent},
   {path: 'matchingCampaigns', component: DisplayMatchesComponent},
   { path: 'campaign/:campaignID', component: CampaignPageComponent },
 ];
@@ -28,14 +29,13 @@ const routes: Routes = [
     AvailableMatchComponent,
     DisplayMatchesComponent,
     CampaignPageComponent,
-    CampaignFormComponent
+    VolCampaignsListComponent
   ],
   exports: [
     AvailableMatchComponent,
     DisplayMatchesComponent,
     CampaignPageComponent,
     RouterModule,
-    CampaignFormComponent
-  ]
+    VolCampaignsListComponent  ]
 })
 export class CampaignsModule { }
