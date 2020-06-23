@@ -9,8 +9,10 @@ import { AvailableMatchComponent } from './components/available-match/available-
 import { DisplayMatchesComponent } from './components/display-matches/display-matches.component';
 import { CampaignPageComponent } from './components/campaign-page/campaign-page.component';
 import { Campaign } from './models/Campaign';
+import { VolCampaignsListComponent } from './components/vol-campaigns-list/vol-campaigns-list.component';
 
 const routes: Routes = [
+  {path: 'volCampaigns', component: VolCampaignsListComponent},
   {path: 'matchingCampaigns', component: DisplayMatchesComponent},
   { path: 'campaign/:campaignID', component: CampaignPageComponent },
 ];
@@ -26,12 +28,14 @@ const routes: Routes = [
   declarations: [
     AvailableMatchComponent,
     DisplayMatchesComponent,
-    CampaignPageComponent
+    CampaignPageComponent,
+    VolCampaignsListComponent
   ],
   exports: [
     AvailableMatchComponent,
     DisplayMatchesComponent,
     CampaignPageComponent,
-    RouterModule  ]
+    RouterModule,
+    VolCampaignsListComponent  ]
 })
 export class CampaignsModule { }
