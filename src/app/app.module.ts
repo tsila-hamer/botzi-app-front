@@ -64,6 +64,7 @@ const appRoutes: Routes = [
   providers: [
     AuthService, AuthGuard, AngularFirestoreModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: []
 })
 export class AppModule { }
