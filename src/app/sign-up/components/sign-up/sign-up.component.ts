@@ -93,6 +93,7 @@ export class SignUpComponent implements OnInit {
       var email = formData.value.email;
       var password = formData.value.password;
       var name = formData.value.name;
+      this.authService.login();
       this.af.auth.createUserWithEmailAndPassword(email, password)
       .then(
         (success) => {

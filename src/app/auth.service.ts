@@ -13,7 +13,6 @@ export class AuthService {
 
   getLoggedUserName() {
     this.currentUser = firebase.auth().currentUser;
-    console.log(this.currentUser);
     if (this.currentUser && this.currentUser.displayName) {
       return this.currentUser.displayName;
     } else {
@@ -27,10 +26,7 @@ export class AuthService {
       (resolve, reject) => {
         firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
-            console.log('success');
             this.userDetails = user;
-            console.log(this.userDetails);
-            console.log(this.userDetails.displayName);
           } else {
           console.log('No user is logged in');
             this.userDetails = null;
@@ -52,7 +48,6 @@ export class AuthService {
 
   getLoggedUserId() {
     this.currentUser = firebase.auth().currentUser;
-    console.log(this.currentUser);
     if (this.currentUser && this.currentUser.uid) {
       return this.currentUser.uid;
     } else {
