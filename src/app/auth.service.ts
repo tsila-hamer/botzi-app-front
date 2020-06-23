@@ -53,7 +53,7 @@ export class AuthService {
   getLoggedUserId() {
     this.currentUser = firebase.auth().currentUser;
     console.log(this.currentUser);
-    if (this.currentUser && this.currentUser.uid && this.loggedIn) {
+    if (this.currentUser && this.currentUser.uid) {
       return this.currentUser.uid;
     } else {
       return '';
