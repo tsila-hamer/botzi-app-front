@@ -5,6 +5,8 @@ import { AngularFireAuthModule, AngularFireAuth } from  'angularfire2/auth';
 import * as firebase from 'firebase';
 import { AuthService } from '../../../auth.service';
 
+import {NavMenuComponent} from 'app/components/nav-menu/nav-menu.component'
+
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
@@ -14,7 +16,7 @@ export class SignInComponent implements OnInit {
   signUpHeader = "Log In";
   signUpType = "log in";
 
-  constructor(public af: AngularFireAuth,private router: Router, private authService: AuthService) { }
+  constructor(public af: AngularFireAuth,private router: Router, private authService: AuthService, private nav: NavMenuComponent) { }
   error = '';
   ngOnInit() {
   }
@@ -28,6 +30,7 @@ export class SignInComponent implements OnInit {
       // The signed-in user info.
       var user = result.user;
       this.authService.login();
+      this.nav.refreshUser();
       this.router.navigate(['/']);
       // ...
     }).catch(function(error) {
@@ -52,6 +55,7 @@ export class SignInComponent implements OnInit {
         (success) => {
         console.log(success);
         this.authService.login();
+
         this.router.navigate(['/']);
       }).catch(
         (err) => {

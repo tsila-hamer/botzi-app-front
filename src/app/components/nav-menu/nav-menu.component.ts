@@ -13,16 +13,33 @@ import { AngularFirestore } from 'angularfire2/firestore';
 })
 export class NavMenuComponent implements OnInit {
   user: firebase.User;
+  userType: string;
 
   constructor(private authService: AuthService, private router: Router, private afAuth: AngularFireAuth, private db: AngularFirestore) {
      this.afAuth.authState.subscribe(user => {
         this.user = user;
-        console.log(this.getUserType());
-        });
+        if (user && user != null) {
+        this.getUserType(user.uid);
+         }});
    }
 
   ngOnInit() {
+    this.afAuth.authState.subscribe(user => {
+        this.user = user;
+        if (user && user != null) {
+          this.getUserType(user.uid);
+          }});
+
   }
+
+  refreshUser() {
+         this.afAuth.authState.subscribe(user => {
+        this.user = user;
+        if (user && user != null) {
+        this.getUserType(user.uid);
+         }});
+  }
+
 
   onLogin() {
     this.authService.login();
@@ -35,18 +52,17 @@ export class NavMenuComponent implements OnInit {
     this.authService.logout();
   }
 
-  getUserType() {
-    var id = this.authService.getLoggedUserId();
+  getUserType(id) {
+   // var id = this.authService.getLoggedUserId();
     if (id) {
       var docRef = this.db.firestore.collection("users").doc(id);
       var userType: string = '';
 
       docRef.get().then((doc) =>
         {   if (doc.exists) {
-            console.log(id);
-            console.log('here');
-            console.log(doc);
-            //userType = doc.userType;
+            userType = doc.data().userType;
+            this.userType = userType;
+
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
@@ -55,7 +71,7 @@ export class NavMenuComponent implements OnInit {
             console.log("Error getting document:", error);
         });
     }
-    return userType;
+
   }
 
 }

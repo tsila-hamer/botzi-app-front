@@ -1,11 +1,11 @@
 <html><head></head><body><div class="container">
   <div class="py-5 text-center">
     <img class="d-block mx-auto mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-    <h2>Campaign Form</h2>
-    <p class="lead">WHATEVER</p>
+    <h2>Campaign Details</h2>
+    <p class="lead">Let's start finding best match volunteers</p>
   </div>
 
-  <div class="row">
+  <div class="row" style="justify-content: center; margin-bottom: 100px;">
 
 
     <div class="col-md-8 order-md-1">
@@ -42,13 +42,12 @@
         <div class="mb-3">
           <label for="oText">About The Campaign:</label>
           <input type="text" id="cText" name="cText" required ngModel>
-
         </div>
 
 
-        <div class="mb-3 form-control">
+        <div class="mb-3">
           <label for="oText">Campaign City:</label>
-          <input required minlength="2" ngModel type="text" id="city" name="city"   >
+          <input required minlength="2" ngModel type="text" id="city" name="city"  ngModel>
           <div class= "alert alert-danger" *ngIf="city.touched && !city.Valid">
            <div  *ngIf="city.errors.required">City is required.</div>
            <div *ngIf="city.errors.minlength">City sould be minimum {{ city.errors.minlength.requiredLength }} characters</div>
@@ -90,7 +89,9 @@
 
         <hr class="mb-4">
         <!-- (click)="onClick()"  will be here when it works  -->
-        <button  class="btn btn-primary btn-lg btn-block" type="submit" (click)="submitCampaignForm(formData)">Submit</button>
+        <div class="submit-btn">
+          <button routerLink="/" type="submit" (click)="submitCampaignForm(formData)">Submit</button>
+        </div>
       </form>
     </div>
   </div>
