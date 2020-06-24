@@ -1,3 +1,4 @@
+import { AuthService } from './../../../auth.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -8,8 +9,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SlideComponent implements OnInit {
   @Input() imgPath: string;
   @Input() selected;
+  constructor(private au:AuthService) { }
 
-  constructor() { }
+  loggedIn()
+  {
+    return this.au.isLoggedIn();
+  }
 
   ngOnInit() {
   }
