@@ -18,12 +18,28 @@ export class NavMenuComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router, private afAuth: AngularFireAuth, private db: AngularFirestore) {
      this.afAuth.authState.subscribe(user => {
         this.user = user;
+        if (user && user != null) {
         this.getUserType(user.uid);
-        });
+         }});
    }
 
   ngOnInit() {
+    this.afAuth.authState.subscribe(user => {
+        this.user = user;
+        if (user && user != null) {
+          this.getUserType(user.uid);
+          }});
+
   }
+
+  refreshUser() {
+         this.afAuth.authState.subscribe(user => {
+        this.user = user;
+        if (user && user != null) {
+        this.getUserType(user.uid);
+         }});
+  }
+
 
   onLogin() {
     this.authService.login();

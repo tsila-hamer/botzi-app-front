@@ -70,7 +70,7 @@ const appRoutes: Routes = [
     AngularFirestoreModule
   ],
   providers: [
-    AuthService, AuthGuard, AngularFirestoreModule
+    AuthService, AuthGuard, AngularFirestoreModule, NavMenuComponent
   ],
   bootstrap: [AppComponent],
   exports: []

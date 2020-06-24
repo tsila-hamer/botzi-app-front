@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { auth } from 'firebase/app';
 import { AuthService } from '../../../auth.service';
+
+import {NavMenuComponent} from 'app/components/nav-menu/nav-menu.component'
 declare var FB: any;
 
 @Component({
@@ -26,7 +28,7 @@ export class SignUpComponent implements OnInit {
   error: any;
   isVol:boolean;
 
-  constructor(public af: AngularFireAuth,private router: Router, private authService: AuthService, private db: AngularFirestore) {
+  constructor(public af: AngularFireAuth,private router: Router, private authService: AuthService, private db: AngularFirestore, private nav: NavMenuComponent) {
   /*
     this.af.auth.subscribe(auth => {
       if(auth) {
@@ -73,6 +75,7 @@ export class SignUpComponent implements OnInit {
       // The signed-in user info.
       var user = result.user;
       this.authService.login();
+      this.nav.refreshUser();
       this.router.navigate(['/']);
       // ...
     }).catch(function(error) {
@@ -100,9 +103,9 @@ export class SignUpComponent implements OnInit {
         (success) => {
         success.updateProfile({displayName: name});
         var userId = success.uid;
-        this.authService.login();
+
         this.writeUserData(userId, name);
-        //this.af.auth.signInWithEmailAndPassword(email, password)
+        this.af.auth.signInWithEmailAndPassword(email, password)
       }).catch(
         (err) => {
         console.log(err);
