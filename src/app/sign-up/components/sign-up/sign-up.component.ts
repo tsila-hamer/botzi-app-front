@@ -99,9 +99,8 @@ export class SignUpComponent implements OnInit {
       .then(
         (success) => {
         success.updateProfile({displayName: name});
-        console.log(success);
-
         var userId = success.uid;
+        this.authService.login();
         this.writeUserData(userId, name);
         //this.af.auth.signInWithEmailAndPassword(email, password)
       }).catch(
