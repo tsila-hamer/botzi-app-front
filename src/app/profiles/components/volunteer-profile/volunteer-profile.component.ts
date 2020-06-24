@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { SkillsComponent } from 'app/profiles/components/skills/skills.component';
+//import { SkillsComponent } from 'app/profiles/components/skills/skills.component';
+import { AuthService } from '../../../auth.service';
+import { ActivatedRoute } from '@angular/router';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Volunteer } from './volunteer';
 
 @Component({
   selector: 'app-volunteer-profile',
@@ -7,28 +11,41 @@ import { SkillsComponent } from 'app/profiles/components/skills/skills.component
   styleUrls: ['./volunteer-profile.component.css']
 })
 export class VolunteerProfileComponent implements OnInit {
-  volFullName: string;
-  volNum: string;
-  volEmail: string;
-  volCity: string;
-  volAvailable: string;
-  volSkills: SkillsComponent;
+  volunteer: Volunteer;
 
-  constructor() {
+constructor(private au:AuthService, public route: ActivatedRoute, private db: AngularFirestore, private authService: AuthService) {
 
   }
-  updateOrganization(){
-    this.volFullName = (<HTMLInputElement>document.getElementById("volFullName")).value;
-    this.volNum = (<HTMLInputElement>document.getElementById("volNum")).value;
-    this.volEmail = (<HTMLInputElement>document.getElementById("volEmail")).value;
-    this.volCity = (<HTMLInputElement>document.getElementById("volCity")).value;
-    this.volAvailable = (<HTMLInputElement>document.getElementById("volAvailable")).value;
-    //this.volSkills = (<HTMLInputElement>document.getElementById("volSkills")).value;
-
-
-  }
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getVolunteerData();
   }
 
+  getVolunteerData() {
+    var id = this.au.getLoggedUserId();
+    var docRef = this.db.firestore.collection("Volunteers").doc(id);
+    var volunteerFromFirebase: Volunteer;
+
+    docRef.get().then((doc) =>
+    {   if (doc.exists) {
+      volunteerFromFirebase = {
+        volunteerId:doc.data().volunteerId,
+        volunteerName: doc.data().volunteerName,
+        skills: doc.data().skills,
+        address: doc.data().address,
+        phone_number: doc.data().phone_number,
+        free_time: doc.data().free_time
+        
+      };         
+            this.volunteer = volunteerFromFirebase;
+
+          } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+  }  
+  
 }
 

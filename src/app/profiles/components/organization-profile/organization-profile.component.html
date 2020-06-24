@@ -1,66 +1,67 @@
+
 <section id="organization-profile" class="organization-profile">
   <div class="row">
     <div class="col">
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-      <h2>Organization Profile</h2>
-    </div>
-    <div class="row" style="justify-content: center; margin-bottom: 100px;">
-      <div class="col-md-8 order-md-1">
-        <div class="row">
-          <h4 class="mb-3" id="ceb">Update Your Details:</h4>
-
-          <!--div class="col">
-          </div>
-          <div class="col">
-            <button class="btn btn-primary btn-lg btn-block" (click)="wantToUpdate()" type="submit">Click To Update</button>
-          </div-->
-        </div >
+      <h2>Organization Profile</h2>      
+    </div>  
+    <div class="row">        
+      <div class="col-md-8 order-md-1"> 
+                   
         <form class="needs-validation" novalidate="">
           <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="organizationName">Organization Name:</label>
-              <input required="" value="" placeholder="" id="organizationName" class="form-control" type="text">
-              <div class="invalid-feedback">
-                Valid organization name is required.
+          <h4 class="mb-3" id="ceb">Your Details:</h4> 
+        </div >
+          <div class="row">            
+            <div class="col">
+              <div class="row">
+              <div class="col"><label for="organizationName">Organization Name:</label></div>
+              <div class="col"><label >{{organization.organizationName}}</label></div>
               </div>
             </div>
-            <div class="col-md-6 mb-3">
-              <label for="Contact Name">Organization Number:</label>
-              <input type="text" class="form-control" id="organizationNumber" placeholder="" value="" required="">
+            <div class="col">
+              <div class="row"></div>
+              <div class="col"><label for="organizationNumber">Organization Number:</label></div>
+              <div class="col"><label >{{organization.organizationNumber}}</label></div>
             </div>
+            
           </div>
-          <div class="mb-3">
-            <label for="oText">About The Organization:</label>
-            <input type="text" id="oText" required="">
+          <div class="row">
+            <div class="col"><label for="location">Organization Main Location:</label></div>
+            <div class="col"><label>{{organization.location}}</label></div>
+          </div> 
+          <div class="row">
+            <div class="col"><label for="mail">Mail Adress:</label></div>
+            <div class="col"><label>{{organization.mail}}</label></div>   
+            
           </div>
-          <div class="mb-3">
-            <label for="location">Organization Main Location:</label>
-            <input type="tel" class="form-control" id="location" placeholder=" " required="">
+                  
+                   
+          <div class="row">
+            <div class="col"><label for="contactName">Contact Name:</label></div>
+            <div class="col"><label >{{organization.contactName}}</label></div>
+            
+                     
+          </div>  
+          <div class="row">
+            <div class="col"><label for="phoneNumber">Contact Phone Number:</label></div>
+            <div class="col"><label >{{organization.phoneNumber}}</label></div>
+            
+                       
+          </div>  
+          <div class="row">
+            <div class="col"><label for="oText">About The Organization:</label></div>
+            <div class="col"><label >{{organization.oText}}</label></div>
+            
+            
           </div>
-          <div class="mb-3">
-            <label for="contactName">Contact Name:</label>
-            <input type="text" id="contactName" required="">
-          </div>
-          <div class="mb-3">
-            <label for="phoneNumber">Contact Phone Number:</label>
-            <input type="text" id="phoneNumber" type=tel  required="">
-          </div>
-          <div class="mb-3">
-            <label for="mail">Mail Adress:</label>
-            <input type="text" class="form-control" id="mail" type="email" required="">
-            <div class="invalid-feedback">
-              Valid mail adress is required.
-            </div>
-          </div>
-          <hr class="mb-4">
-          <div class="submit-btn">
-          <button routerLink="/" type="update" (click)="updateOrganization()">Update</button>
-        </div>
+          <hr class="mb-4">  
+          <button class="btn btn-primary btn-lg btn-block" type="update" routerLink="/organizationForm" >Edit</button>
         </form>
       </div>
     </div>
     </div>
-
+  
   </div>
 </section>
