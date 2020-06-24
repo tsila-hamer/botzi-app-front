@@ -18,68 +18,73 @@
 
           <div class="col-md-6 mb-3">
 
-            <form action="/action_page.php">
-              <label for="img">Select image:</label>
-              <input type="file" id="img" name="img_url" accept="image/*" required ngModel>
-            </form>
+           
+           
 
-            <label for="Name">Campaign Name:</label>
-
-
-            <input required="" value="" placeholder="" id="campaignName" class="form-control" type="text" name="campaignName" required ngModel>
-            <div class="invalid-feedback">
-              Valid name is required.
-            </div>
           </div>
 
         </div>
-        <label for="Name">Organization Name:</label>
-        <input type="text" class="form-control" id="campaignNpo" name="campaignNpo" required ngModel>
-        <div class="invalid-feedback">
-          Valid name is required.
-        </div>
-
+       
         <div class="mb-3">
           <label for="oText">About The Campaign:</label>
-          <input type="text" id="cText" name="cText" required ngModel>
+          <input type="text" *ngIf="!isEdit" id="cText" placeholder="..." name="cText" required ngModel>
+          <input type="text" ngIf="isEdit"  [(ngModel)]="this.Campaign.cText" id="d_cText" name="cText" required ngModel>
         </div>
 
 
         <div class="mb-3">
           <label for="oText">Campaign City:</label>
-          <input required minlength="2" ngModel type="text" id="city" name="city"  ngModel>
+          <input required minlength="2" *ngIf="!isEdit" placeholder="Jerusalm" ngModel type="text" id="city" name="city"  ngModel>
           <div class= "alert alert-danger" *ngIf="city.touched && !city.Valid">
            <div  *ngIf="city.errors.required">City is required.</div>
            <div *ngIf="city.errors.minlength">City sould be minimum {{ city.errors.minlength.requiredLength }} characters</div>
           </div>
 
+          <input required minlength="2" ngIf="isEdit"  [(ngModel)]="this.Campaign.City" ngModel type="text" id="d_city" name="city"  ngModel>
+          <div class= "alert alert-danger" *ngIf="city.touched && !city.Valid">
+           <div  *ngIf="city.errors.required">City is required.</div>
+           <div *ngIf="city.errors.minlength">City sould be minimum {{ city.errors.minlength.requiredLength }} characters</div>
+          </div>
+
+
         </div>
 
 
-        <div class="mb-3">
-          <label for="Organization Number">Organization Number:</label>
-          <input type="tel" class="form-control" id="organizationNumber" placeholder=" " name="organizationNumber" required ngModel>
-
-        </div>
+       
 
        <div class="mb-3">
           <label for="neededSkills">Required Skills:<span class="text-muted"></span></label>
-          <input type="text" class="form-control" id="skills" name="skills" required ngModel>
+          <input type="text" *ngIf="!isEdit" class="form-control" id="skills" name="skills" placeholder="X,X,X..." required ngModel>
+          <input type="text" ngIf="isEdit"  [(ngModel)]="this.Campaign.skills"  class="form-control" id="d_skills" name="skills" placeholder="X,X,X..." required ngModel>
+
         </div>
+
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="Start Date"> Start Date</label>
-            <input type="date" class="form-control" id="startDate" placeholder="" value="" name="startDate" required ngModel>
+            <input type="date" *ngIf="!isEdit" class="form-control" id="startDate" placeholder="" value="" name="startDate" required ngModel>
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
+
+            <input type="date" *ngIf="isEdit"  [(ngModel)]="this.Campaign.startDate" class="form-control" id="d_startDate" placeholder="" value="" name="startDate" required ngModel>
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+
           </div>
           <div class="col-md-6 mb-3">
             <label for="Last Date">End Date</label>
-            <input type="date" class="form-control" id="endDate" placeholder="00:00" value="" name="endDate" required ngModel>
+            <input type="date" *ngIf="!isEdit" class="form-control" id="endDate" placeholder="00:00" value="" name="endDate" required ngModel>
             <div class="invalid-feedback">
               Valid last name is required.
             </div>
+
+            <input type="date" *ngIf="isEdit"   [(ngModel)]="this.Campaign.endDate"   class="form-control" id="d_endDate" placeholder="00:00" value="" name="endDate" required ngModel>
+            <div class="invalid-feedback">
+              Valid last name is required.
+            </div>
+
           </div>
         </div>
 

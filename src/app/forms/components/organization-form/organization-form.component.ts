@@ -28,7 +28,10 @@ export class OrganizationFormComponent implements OnInit {
       oText : formData.value.oText,
       location :  formData.value.location,
       contactName : formData.value.contactName,
+      phoneNumber:formData.value.phoneNumber,
+      logo:formData.value.logo,
       mail : formData.value.mail
       }).then(res => {}, err => err);
     }
 }
+
