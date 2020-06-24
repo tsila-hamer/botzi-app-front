@@ -47,7 +47,7 @@
 
         <div class="mb-3">
           <label for="oText">Campaign City:</label>
-          <input required minlength="2" ngModel type="text" id="city" name="city"  ngModel>
+          <input required minlength="2" type="text" id="city" name="city" #city ngModel>
           <div class= "alert alert-danger" *ngIf="city.touched && !city.Valid">
            <div  *ngIf="city.errors.required">City is required.</div>
            <div *ngIf="city.errors.minlength">City sould be minimum {{ city.errors.minlength.requiredLength }} characters</div>

@@ -76,7 +76,11 @@ export class SignUpComponent implements OnInit {
       var user = result.user;
       this.authService.login();
       this.nav.refreshUser();
-      this.router.navigate(['/']);
+      if (this.type === "volunteer") {
+        this.router.navigate(["/volunteerForm"]);
+      } else {
+        this.router.navigate(["/OrganizationForm"]);
+      }
       // ...
     }).catch(function(error) {
       // Handle Errors here.
@@ -103,9 +107,15 @@ export class SignUpComponent implements OnInit {
         (success) => {
         success.updateProfile({displayName: name});
         var userId = success.uid;
-
         this.writeUserData(userId, name);
         this.af.auth.signInWithEmailAndPassword(email, password)
+        this.nav.refreshUser();
+
+        if (this.type == "volunteer") {
+          this.router.navigate(["/volunteerForm"]);
+        } else {
+          this.router.navigate(["/OrganizationForm"]);
+        }
       }).catch(
         (err) => {
         console.log(err);
@@ -116,11 +126,6 @@ export class SignUpComponent implements OnInit {
 
   writeUserData(userId, name) {
     console.log('Writing user ' + userId + ',' + name +','+this.type);
-    /*
-    firebase.database().ref('users/' + userId).set({
-        userName: name,
-        userType: this.type
-    });*/
     this.db.collection('/users').doc(userId).set({
         userName: name,
         userType: this.type

@@ -64,8 +64,7 @@
             <div class="sent-message">Your sign up is completed. Thank you!</div>
           </div>
           <div class="text-center">
-            <button [disabled]="!formData.valid" class="btn btn-primary" routerLink="/volunteerForm" *ngIf="isVol" type="submit" (click)="onSubmitSignUp(formData)">Sign Up</button>
-            <button [disabled]="!formData.valid"  class="btn btn-primary" routerLink="/OrganizationForm" *ngIf="!isVol" type="submit" (click)="onSubmitSignUp(formData)">Sign Up</button>
+            <button [disabled]="!formData.valid" class="btn btn-primary" type="submit" (click)="onSubmitSignUp(formData)">Sign Up</button>
 
             <!-- [disabled]="!formData.valid" -->
           </div>
