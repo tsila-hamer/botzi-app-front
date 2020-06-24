@@ -16,7 +16,7 @@ export class VolunteerFormComponent implements OnInit {
   @Input() type: string;
   @Input() signUpHeader: string;
   error: any;
-  constructor(public route: ActivatedRoute, private db: AngularFirestore, private authService: AuthService) { }
+  constructor(public route: ActivatedRoute, private db: AngularFirestore, private authService: AuthService, private router: Router) { }
 
 
 
@@ -40,7 +40,9 @@ export class VolunteerFormComponent implements OnInit {
           //endTime : formData.value.endTime,
           startDate : formData.value.startDate,
           endDate : formData.value.endDate
-        }).then(res => {}, err => err);
+        }).then(res => {
+          this.router.navigate(['/profile-volunteer']);
+        }, err => err);
       }
     else {
       console.log("no user is logged in");

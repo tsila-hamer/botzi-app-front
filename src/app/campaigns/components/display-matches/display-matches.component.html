@@ -7,10 +7,17 @@
           <p *ngIf="!appliedAlready">Let's volunteer!</p>
         </div>
 
-        <div class="row">
+        <div class="row" *ngIf="campaignsList!=[]&&campaignsList">
 
           <app-available-match *ngFor="let campaign of campaignsList" [campaign] = "campaign" [appliedAlready] = "appliedAlready"></app-available-match>
 
+        </div>
+
+        <div class="row" *ngIf="!campaignsList||campaignsList==[]||error!=''">
+
+          <p style="text-align: center;">Sorry, no matching campaigns were found
+          <br>
+          Please add some more details in your profiles to find you the best matches</p>
         </div>
 
       </div>

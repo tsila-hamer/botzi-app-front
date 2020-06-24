@@ -1,4 +1,6 @@
 <section id="about-list" class="about-list" *ngIf="campaign">
+
+
   <h2>{{campaign.campaignName}}</h2>
   <div class="container">
 
@@ -33,7 +35,11 @@
 
   </div>
   <div class="apply-btn">
-    <button routerLink="/volCampaigns" type="button" (click)="applyCampaign()">Apply</button>
+    <button routerLink="/myCampaigns" type="button" (click)="applyCampaign()">Apply</button>
+  </div>
+
+    <div class="back">
+    <a routerLink="/matchingCampaigns">Back to all campaigns</a>
   </div>
 </section>
 
