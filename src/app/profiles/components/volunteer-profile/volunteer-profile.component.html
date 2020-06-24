@@ -3,32 +3,32 @@
       <div class="col">
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h2>Vollunteer Profile</h2>      
-      </div>  
-      <div class="row">        
-        <div class="col-md-8 order-md-1"> 
+        <h2>Volunteer Profile</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-8 order-md-1">
           <div class="row">
-            <h4 class="mb-3" id="ceb">Update Your Details:</h4>  
-  
+            <h4 class="mb-3" id="ceb">Update Your Details:</h4>
+
             <!--div class="col">
             </div>
             <div class="col">
-              <button class="btn btn-primary btn-lg btn-block" (click)="wantToUpdate()" type="submit">Click To Update</button> 
+              <button class="btn btn-primary btn-lg btn-block" (click)="wantToUpdate()" type="submit">Click To Update</button>
             </div-->
-          </div >           
+          </div >
           <form class="needs-validation" novalidate="">
-            <div class="mb-3">            
-              
+            <div class="mb-3">
+
                 <label for="volFullName">Volunteer Name:</label>
                 <input required="" value="" placeholder="" id="volFullName" class="form-control" type="text">
                 <div class="invalid-feedback">
                   Valid organization name is required.
                 </div>
-              
+
             </div>
             <div class="mb-3">
               <label for="volNum">Phone Number:</label>
-              <input type="tel" id="volNum" required="">           
+              <input type="tel" id="volNum" required="">
             </div>
             <div class="mb-3">
               <label for="volEmail">Mail Adress:</label>
@@ -36,34 +36,36 @@
               <div class="invalid-feedback">
                 Valid mail adress is required.
               </div>
-            </div>        
+            </div>
             <div class="mb-3">
               <label for="volCity">Volunteering City:</label>
-              <input type="text" class="form-control" id="volCity" placeholder=" " required="">            
-            </div>          
+              <input type="text" class="form-control" id="volCity" placeholder=" " required="">
+            </div>
             <div class="mb-3">
               <label for="volAvailable">Availablity:</label>
-              <input type="text" id="volAvailable" required="">           
-            </div>  
+              <input type="text" id="volAvailable" required="">
+            </div>
             <div class="mb-3">
               <label for="volSkills">skills:</label>
-              <app-skills id="volSkills"></app-skills>           
-            </div>  
-            
-            <hr class="mb-4">  
+              <div style="margin: auto 30px;">
+                <app-skills id="volSkills" style="margin: auto 30px;"></app-skills>
+              </div>
+            </div>
+
+            <hr class="mb-4">
             <button class="btn btn-primary btn-lg btn-block" type="update" (click)="updateOrganization()" >Update</button>
           </form>
         </div>
       </div>
       </div>
-    
+
     <!--div class="background">
       <div class="container">
         <div class="panel pricing-table">
-          
+
           <div class="pricing-plan">
             <img class="bd-placeholder-img rounded-circle" src="https://www.gluna.org/resources/EmailTemplates/Volume%202%20Issue%201/images/grow-membership.jpg" width="140" height="140"/>
-    
+
             <h2 class="pricing-header">{{orgName}}</h2>
             <ul class="pricing-features">
               <li class="pricing-features-item">{{orgAddres}}</li>
@@ -73,12 +75,10 @@
             <We should add a volunteer area skills >
             <a href="#/" class="pricing-button">Volunteer Area</a>
           </div>
-                      
+
         </div>
       </div>
     </div-->
-      <div class=" col">
-        <h4 >My Campaigns:</h4>
-     </div>
+
     </div>
   </section>

@@ -10,9 +10,8 @@ import { OrganizationProfileComponent } from './components/organization-profile/
 import { SkillsComponent } from './components/skills/skills.component';
 
 const routes: Routes = [
-  {path: 'profile/volunteer', component: VolunteerProfileComponent},
-  {path: 'profile/organization', component: OrganizationProfileComponent}
-
+  {path: 'profile-volunteer', component: VolunteerProfileComponent},
+  {path: 'profile-organization', component: OrganizationProfileComponent}
 ];
 
 @NgModule({

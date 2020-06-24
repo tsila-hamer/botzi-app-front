@@ -1,11 +1,11 @@
 <html><head></head><body><div class="container">
   <div class="py-5 text-center">
     <img class="d-block mx-auto mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-    <h2>Organization Form</h2>
-    <p class="lead">WHATEVER</p>
+    <h2>Hi {{ authService.getLoggedUserName() }}, Let's Meet</h2>
+    <p class="lead">We want to know you better</p>
   </div>
 
-  <div class="row">
+  <div class="row" style="justify-content: center; margin-bottom: 100px;">
 
 
     <div class="col-md-8 order-md-1">
@@ -34,7 +34,7 @@
           </div>
           <div class="col-md-6 mb-3 form-group">
             <label for="organizationNumber">Organization Number:</label>
-            <input type="number" class="form-control" id="organizationNumber" placeholder="" 
+            <input type="number" class="form-control" id="organizationNumber" placeholder=""
             value="" name="organizationNumber" required ngModel #organizationNumberInput="ngModel">
             <div class="validate"></div>
               <div *ngIf="organizationNumberInput.invalid && (organizationNumberInput.dirty || organizationNumberInput.touched)" class="alert alert-danger">
@@ -46,11 +46,11 @@
         </div>
         <div class=" form-group">
           <label for="oText">About The Organization:</label>
-          <input required minlength="2" ngModel  class="form-control" 
-             name="oText" #oTextInput="ngModel" id="oText" type="text" placeholder="About" 
+          <input required minlength="2" ngModel  class="form-control"
+             name="oText" #oTextInput="ngModel" id="oText" type="text" placeholder="About"
              data-msg="Please enter at least 8 chars of subject">
              <div class="validate"></div>
-          <div class= "alert alert-danger" 
+          <div class= "alert alert-danger"
            *ngIf="(oTextInput.touched||oTextInput.dirty) && !oTextInput.valid">
             <div  *ngIf="oTextInput.errors.required">
               About is required.
@@ -100,7 +100,7 @@
 
         <div class="mb-3 form-group ">
           <label for="mail">Contect Mail Adress:</label>
-          <input type="email" class="form-control input-error" id="mail" type="email" name="mail" 
+          <input type="email" class="form-control input-error" id="mail" type="email" name="mail"
           required ngModel email #emailInput="ngModel"
           placeholder="Email" data-rule="email">
           <div class="validate"></div>
@@ -118,7 +118,10 @@
       <!-- dribbble -->
 
         <hr class="mb-4">
-        <button class="btn btn-primary" [disabled]="!formData.valid" routerLink="/" type="submit" (click)="SubmitOrganizationForm(formData)">Submit</button>
+
+        <div class="submit-btn">
+          <button routerLink="/" type="submit" (click)="SubmitOrganizationForm(formData)" [disabled]="!formData.valid">Submit</button>
+        </div>
       </form>
     </div>
   </div>
