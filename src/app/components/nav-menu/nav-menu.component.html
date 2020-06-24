@@ -1,7 +1,7 @@
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-none d-lg-block">
     <div class="container d-flex">
-      <div class="contact-info mr-auto"> 
+      <div class="contact-info mr-auto">
          <a href="https://www.facebook.com/Botzi-The-Volunteer-Matching-Bot-100834055011426/" class="facebook"><i class="icofont-facebook"></i></a>
 
         <i class="icofont-envelope"></i><a href="mailto:contact@example.com">contact@example.com</a>
@@ -17,6 +17,8 @@
         <a *ngIf="!user" class="login-btn" href="" (click)="onLogin()" routerLink="/login">Login</a>
         <a *ngIf="user && userType=='organization'" class="login-btn" href="" routerLink="/campaignForm" >Add a campaign </a>
         <a *ngIf="user && userType=='volunteer'" class="login-btn" href="" routerLink="/matchingCampaigns" >Matches For you </a>
+        <a *ngIf="user && userType=='volunteer'" class="login-btn" href="" routerLink="/myCampaigns" >My Campaigns </a>
+
         <a *ngIf="user && userType=='volunteer'" class="login-btn" href="" routerLink="/profile-volunteer">Hi {{ authService.getLoggedUserName() }}</a>
         <a *ngIf="user && userType=='organization'" class="login-btn" href="" routerLink="/profile-organization">Hi {{ authService.getLoggedUserName() }}</a>
         <a *ngIf="user" class="login-btn" href="" (click)="onLogout()">Logout</a>

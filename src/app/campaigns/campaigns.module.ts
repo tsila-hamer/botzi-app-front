@@ -13,7 +13,7 @@ import { VolCampaignsListComponent } from './components/vol-campaigns-list/vol-c
 import { CampaignsPerOrgComponent } from './campaigns-per-org/campaigns-per-org.component';
 
 const routes: Routes = [
-  {path: 'volCampaigns', component: VolCampaignsListComponent},
+  {path: 'myCampaigns', component: VolCampaignsListComponent},
   {path: 'matchingCampaigns', component: DisplayMatchesComponent},
   { path: 'campaign/:campaignID', component: CampaignPageComponent },
 ];
