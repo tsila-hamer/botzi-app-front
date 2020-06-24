@@ -1,11 +1,11 @@
 <html><head></head><body><div class="container">
   <div class="py-5 text-center">
     <img class="d-block mx-auto mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-    <h2>Organization Form</h2>
-    <p class="lead">WHATEVER</p>
+    <h2>Hi {{ authService.getLoggedUserName() }}, Let's Meet</h2>
+    <p class="lead">We want to know you better</p>
   </div>
 
-  <div class="row">
+  <div class="row" style="justify-content: center; margin-bottom: 100px;">
 
 
     <div class="col-md-8 order-md-1">
@@ -22,15 +22,17 @@
         <div class="row">
 
           <div class="col-md-6 mb-3">
+            <label>Organization Name:</label>
+            <input type="text" class="form-control" id="organizationName" placeholder="" value="" name="organizationName" required ngModel>
             <div class="invalid-feedback">
               Valid organization name is required.
             </div>
           </div>
           <div class="col-md-6 mb-3">
-            <label for="Contact Name">Organization Number:</label>
+            <label>Organization Number:</label>
             <input type="text" class="form-control" id="organizationNumber" placeholder="" value="" name="organizationNumber" required ngModel>
             <div class="invalid-feedback">
-              Valid name is required.
+              Valid number is required.
             </div>
           </div>
         </div>
@@ -72,7 +74,10 @@
       <!-- dribbble -->
 
         <hr class="mb-4">
-        <button routerLink="/" type="submit" (click)="SubmitOrganizationForm(formData)">Submit</button>
+
+        <div class="submit-btn">
+          <button routerLink="/" type="submit" (click)="SubmitOrganizationForm(formData)">Submit</button>
+        </div>
       </form>
     </div>
   </div>
