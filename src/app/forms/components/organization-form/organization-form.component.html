@@ -87,12 +87,16 @@
 
         <div class="mb-3">
           <label for="phoneNumber">Contact Phone Number:</label>
-          <input type="text" class="form-control" id="phoneNumber" type=tel  name="phoneNumber" required ngModel #phoneNumberInput="ngModel">
+          <input type="tel" pattern="[0-9]{10}" class="form-control" id="phoneNumber" type=tel  name="phoneNumber" required ngModel #phoneNumberInput="ngModel">
           <div class="validate"></div>
           <div *ngIf="phoneNumberInput.invalid && (phoneNumberInput.dirty || phoneNumberInput.touched)" class="alert alert-danger">
             <div *ngIf="phoneNumberInput.errors.required">
-              Name is required.
-          </div>
+              Phone Number is required.
+            </div>
+            <div *ngIf="phoneNumberInput.errors.pattern">
+              Phone Number is 10 digit only without  -/+ ...
+            </div>
+
           </div>
 
         </div>
