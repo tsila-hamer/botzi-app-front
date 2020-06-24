@@ -1,3 +1,6 @@
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {BackendCallsService} from './backend-calls.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
@@ -64,13 +67,16 @@ const appRoutes: Routes = [
     CampaignsModule,
     UserFormsModule,
     ProfilesModule,
+    HttpClientModule,
+    HttpModule,
+    HttpClientModule,
     RouterModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
   providers: [
-    AuthService, AuthGuard, AngularFirestoreModule, NavMenuComponent
+    AuthService, AuthGuard, AngularFirestoreModule, NavMenuComponent,BackendCallsService,
   ],
   bootstrap: [AppComponent],
   exports: []

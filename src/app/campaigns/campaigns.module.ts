@@ -10,6 +10,7 @@ import { DisplayMatchesComponent } from './components/display-matches/display-ma
 import { CampaignPageComponent } from './components/campaign-page/campaign-page.component';
 import { Campaign } from './models/Campaign';
 import { VolCampaignsListComponent } from './components/vol-campaigns-list/vol-campaigns-list.component';
+import { CampaignsPerOrgComponent } from './campaigns-per-org/campaigns-per-org.component';
 
 const routes: Routes = [
   {path: 'volCampaigns', component: VolCampaignsListComponent},
@@ -29,7 +30,8 @@ const routes: Routes = [
     AvailableMatchComponent,
     DisplayMatchesComponent,
     CampaignPageComponent,
-    VolCampaignsListComponent
+    VolCampaignsListComponent,
+    CampaignsPerOrgComponent
   ],
   exports: [
     AvailableMatchComponent,
