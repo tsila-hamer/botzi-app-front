@@ -63,6 +63,7 @@ const appRoutes: Routes = [
     SignUpModule,
     CampaignsModule,
     UserFormsModule,
+    ProfilesModule,
     RouterModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
