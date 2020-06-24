@@ -10,7 +10,7 @@ import { VolunteerFormComponent } from './components/volunteer-form/volunteer-fo
 import { OrganizationFormComponent } from './components/organization-form/organization-form.component';
 
 const routes: Routes = [
-  {path: 'volunteerForm', component: VolunteerFormComponent},
+  {path: 'volunteerForm/:isEdit', component: VolunteerFormComponent},
   {path: 'campaignForm', component: CampaignFormComponent},
   {path: 'OrganizationForm', component: OrganizationFormComponent}
 

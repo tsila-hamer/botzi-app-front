@@ -25,7 +25,7 @@ export class SignUpComponent implements OnInit {
   @Input() signUpHeader: string;
   error: any;
   isVol:boolean;
-
+  eEdit = "false";
   constructor(public af: AngularFireAuth,private router: Router, private authService: AuthService, private db: AngularFirestore) {
   /*
     this.af.auth.subscribe(auth => {

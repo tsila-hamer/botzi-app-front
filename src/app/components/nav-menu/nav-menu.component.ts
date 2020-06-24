@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'app/auth.service';
+import { AuthService } from '../../auth.service';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { AngularFireAuthModule, AngularFireAuth } from  'angularfire2/auth';
@@ -13,7 +13,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 })
 export class NavMenuComponent implements OnInit {
   user: firebase.User;
-
+isEdit = "true";
   constructor(private authService: AuthService, private router: Router, private afAuth: AngularFireAuth, private db: AngularFirestore) {
      this.afAuth.authState.subscribe(user => {
         this.user = user;
