@@ -18,14 +18,8 @@
 
           <div class="col-md-6 mb-3">
 
-            <form action="/action_page.php">
-              <label for="img">Select image:</label>
-              <input type="file" id="img" name="img_url" accept="image/*" required ngModel>
-            </form>
-
-            <label for="Name">Campaign Name:</label>
-
-
+           
+            <label for="Name">Campaign Name:</label>     
             <input required="" value="" placeholder="" id="campaignName" class="form-control" type="text" name="campaignName" required ngModel>
             <div class="invalid-feedback">
               Valid name is required.
@@ -33,12 +27,7 @@
           </div>
 
         </div>
-        <label for="Name">Organization Name:</label>
-        <input type="text" class="form-control" id="campaignNpo" name="campaignNpo" required ngModel>
-        <div class="invalid-feedback">
-          Valid name is required.
-        </div>
-
+       
         <div class="mb-3">
           <label for="oText">About The Campaign:</label>
           <input type="text" id="cText" name="cText" required ngModel>
@@ -64,8 +53,9 @@
 
        <div class="mb-3">
           <label for="neededSkills">Required Skills:<span class="text-muted"></span></label>
-          <input type="text" class="form-control" id="skills" name="skills" required ngModel>
+          <input type="text" class="form-control" id="skills" name="skills" placeholder="X,X,X..." required ngModel>
         </div>
+
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="Start Date"> Start Date</label>

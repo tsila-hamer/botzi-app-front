@@ -33,6 +33,7 @@ export class CampaignFormComponent implements OnInit {
         decription : cText,
         city : city,
         startDate : startDate,
+        skills : (formData.value.skills+"").split(','),
         endDate : endDate
       }).then(res => {}, err => err);
     }
