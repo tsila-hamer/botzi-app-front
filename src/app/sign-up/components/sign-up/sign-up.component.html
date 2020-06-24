@@ -22,14 +22,26 @@
             <div class="error" *ngIf="error">{{ error }}</div>
             <div class="form-group">
               <input type="text" name="name" class="form-control" id="name" placeholder="Full Name"
-                     data-rule="minlen:4" data-msg="Please enter at least 4 chars" ngModel required/>
+                     data-rule="minlen:4" data-msg="Please enter at least 4 chars" ngModel required #nameInput="ngModel"/>
               <div class="validate"></div>
+              <div *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)" class="alert alert-danger">
+                <div *ngIf="nameInput.errors.required">
+                  name is required.
+              </div>
+              </div>
+
             </div>
 
             <div class="form-group">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" type="email"
-                     data-msg="Please enter a valid email" ngModel required email/>
+              <input type="email" class="form-control input-error" name="email" id="email" placeholder="Email" data-rule="email"
+                     ngModel  [(ngModel)]="email" required email #emailInput="ngModel"/>
               <div class="validate"></div>
+              <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="alert alert-danger">
+                <div *ngIf="emailInput.errors.required">
+                  Email is required.
+              </div>
+              <div class="input-error-txt">email invalid please check it and try again</div>
+          </div>
             </div>
 
           <div class="form-group">
@@ -52,8 +64,9 @@
             <div class="sent-message">Your sign up is completed. Thank you!</div>
           </div>
           <div class="text-center">
-            <button routerLink="/volunteerForm" *ngIf="isVol" type="submit" (click)="onSubmitSignUp(formData)">Sign Up</button>
-            <button routerLink="/OrganizationForm" *ngIf="!isVol" type="submit" (click)="onSubmitSignUp(formData)">Sign Up</button>
+            <button [disabled]="!formData.valid" class="btn btn-primary" routerLink="/volunteerForm" *ngIf="isVol" type="submit" (click)="onSubmitSignUp(formData)">Sign Up</button>
+            <button [disabled]="!formData.valid"  class="btn btn-primary" routerLink="/OrganizationForm" *ngIf="!isVol" type="submit" (click)="onSubmitSignUp(formData)">Sign Up</button>
+
             <!-- [disabled]="!formData.valid" -->
           </div>
         </form>

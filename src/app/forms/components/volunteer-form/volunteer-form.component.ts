@@ -1,5 +1,5 @@
 import * as firebase from 'firebase';
-import { AuthService } from '../../../auth.service';
+import { AuthService } from 'app/auth.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';

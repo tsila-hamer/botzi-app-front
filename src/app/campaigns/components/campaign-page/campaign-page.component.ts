@@ -1,6 +1,6 @@
 import * as firebase from 'firebase';
-import { AuthService } from '../../../auth.service';
-import { Campaign } from '../../../campaigns/models/Campaign';
+import { AuthService } from 'app/auth.service';
+import { Campaign } from 'app/campaigns/models/Campaign';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';

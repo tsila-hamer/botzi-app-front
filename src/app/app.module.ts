@@ -63,13 +63,14 @@ const appRoutes: Routes = [
     SignUpModule,
     CampaignsModule,
     UserFormsModule,
+    ProfilesModule,
     RouterModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
   providers: [
-    AuthService, AuthGuard, AngularFirestoreModule
+    AuthService, AuthGuard, AngularFirestoreModule, NavMenuComponent
   ],
   bootstrap: [AppComponent],
   exports: []
