@@ -25,7 +25,7 @@
           <div class="col-md-6 mb-3 form-group">
             <label for="organizationNumber">Organization Number:</label>
             
-            <input type="number" class="form-control" id="organizationNumber" placeholder=""
+            <input type="number" *ngIf="!isEdit" class="form-control" id="organizationNumber" placeholder="XXXX"
             value="" name="organizationNumber" required ngModel #organizationNumberInput="ngModel">
             <div class="validate"></div>
               <div *ngIf="organizationNumberInput.invalid && (organizationNumberInput.dirty || organizationNumberInput.touched)" class="alert alert-danger">
@@ -33,26 +33,33 @@
                   Number is required.
               </div>
               </div>
+              <input type="number" *ngIf="isEdit"   [(ngModel)]="this.organization.organizationNumber" class="form-control" id="organizationNumber" placeholder=""
+              value="" name="organizationNumber" required ngModel #organizationNumberInput="ngModel">
+              <div class="validate"></div>
+                <div *ngIf="organizationNumberInput.invalid && (organizationNumberInput.dirty || organizationNumberInput.touched)" class="alert alert-danger">
+                  <div *ngIf="organizationNumberInput.errors.required">
+                    Number is required.
+                </div>
+                </div>
+
           </div>
-          
-
-
-
           
         </div>
 
         <div class="mb-3">
           <label for="logo">Organization Logo:</label>
-          <input type="text" class="form-control" id="logo" type=tel  name="phoneNumber" required ngModel #phoneNumberInput="ngModel">
+          <input type="text" *ngIf="!isEdit" class="form-control" id="logo" type=tel  name="phoneNumber" required ngModel #phoneNumberInput="ngModel">
           <div class="validate"></div>
 
+          <input type="text" *ngIf="isEdit"   [(ngModel)]="this.organization.logo" class="form-control" id="logo" type=tel  name="phoneNumber" required ngModel #phoneNumberInput="ngModel">
+          <div class="validate"></div>
         </div>
 
 
 
         <div class=" form-group">
           <label for="oText">About The Organization:</label>
-          <input required minlength="2" ngModel  class="form-control"
+          <input required minlength="2" *ngIf="!isEdit" ngModel placeholder="..." class="form-control"
              name="oText" #oTextInput="ngModel" id="oText" type="text" placeholder="About"
              data-msg="Please enter at least 8 chars of subject">
              <div class="validate"></div>
@@ -65,11 +72,28 @@
               About should be minimum 2 characters
             </div>
           </div>
+
+          <input required minlength="2" *ngIf="isEdit"   [(ngModel)]="this.organization.oText" ngModel  class="form-control"
+          name="oText" #oTextInput="ngModel" id="oText" type="text" placeholder="About"
+          data-msg="Please enter at least 8 chars of subject">
+          <div class="validate"></div>
+       <div class= "alert alert-danger"
+        *ngIf="(oTextInput.touched||oTextInput.dirty) && !oTextInput.valid">
+         <div  *ngIf="oTextInput.errors.required">
+           About is required.
+         </div>
+         <div *ngIf="oTextInput.errors.minlength">
+           About should be minimum 2 characters
+         </div>
+       </div>
+
+
+
         </div>
 
         <div class="mb-3 form-group">
           <label for="location">Organization Main Location:</label>
-          <input type="text" class="form-control" id="location" placeholder=" " name="location" required ngModel
+          <input type="text" *ngIf="!isEdit" class="form-control" id="location" placeholder="Jerusalm" name="location" required ngModel
           #locationInput="ngModel">
           <div class="validate"></div>
           <div *ngIf="locationInput.invalid && (locationInput.dirty || locationInput.touched)" class="alert alert-danger">
@@ -77,11 +101,22 @@
               Location is required.
           </div>
           </div>
+
+          <input type="text" *ngIf="isEdit"   [(ngModel)]="this.organization.location" class="form-control" id="location" placeholder=" " name="location" required ngModel
+          #locationInput="ngModel">
+          <div class="validate"></div>
+          <div *ngIf="locationInput.invalid && (locationInput.dirty || locationInput.touched)" class="alert alert-danger">
+            <div *ngIf="locationInput.errors.required">
+              Location is required.
+          </div>
+          </div>
+
+
         </div>
 
         <div class="mb-3">
           <label for="contactName">Contact Name:</label>
-          <input type="text" class="form-control" id="contactName" name="contactName" required ngModel #contactNameInput="ngModel">
+          <input type="text" *ngIf="!isEdit" class="form-control" placeholder="..." id="contactName" name="contactName" required ngModel #contactNameInput="ngModel">
           <div class="validate"></div>
           <div *ngIf="contactNameInput.invalid && (contactNameInput.dirty || contactNameInput.touched)" class="alert alert-danger">
             <div *ngIf="contactNameInput.errors.required">
@@ -89,11 +124,28 @@
           </div>
           </div>
 
+          <input type="text" *ngIf="isEdit"   [(ngModel)]="this.organization.contactName" class="form-control" id="contactName" name="contactName" required ngModel #contactNameInput="ngModel">
+          <div class="validate"></div>
+          <div *ngIf="contactNameInput.invalid && (contactNameInput.dirty || contactNameInput.touched)" class="alert alert-danger">
+            <div *ngIf="contactNameInput.errors.required">
+              Name is required.
+          </div>
+          </div>
+
+
         </div>
 
         <div class="mb-3">
           <label for="phoneNumber">Contact Phone Number:</label>
-          <input type="text" class="form-control" id="phoneNumber" type=tel  name="phoneNumber" required ngModel #phoneNumberInput="ngModel">
+          <input type="text" *ngIf="!isEdit" class="form-control" id="phoneNumber" placeholder="XXX-XXXXXXX" type=tel  name="phoneNumber" required ngModel #phoneNumberInput="ngModel">
+          <div class="validate"></div>
+          <div *ngIf="phoneNumberInput.invalid && (phoneNumberInput.dirty || phoneNumberInput.touched)" class="alert alert-danger">
+            <div *ngIf="phoneNumberInput.errors.required">
+              Name is required.
+          </div>
+          </div>
+
+          <input type="text" *ngIf="isEdit"   [(ngModel)]="this.organization.phoneNumber" class="form-control" id="phoneNumber" type=tel  name="phoneNumber" required ngModel #phoneNumberInput="ngModel">
           <div class="validate"></div>
           <div *ngIf="phoneNumberInput.invalid && (phoneNumberInput.dirty || phoneNumberInput.touched)" class="alert alert-danger">
             <div *ngIf="phoneNumberInput.errors.required">

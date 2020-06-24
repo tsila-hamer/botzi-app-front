@@ -1,5 +1,5 @@
-import { AuthService } from 'app/auth.service';
-import { Campaign } from 'app/campaigns/models/Campaign';
+import { AuthService } from '../../../../app/auth.service';
+import { Campaign } from '../../../../app/campaigns/models/Campaign';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
@@ -19,15 +19,16 @@ export class CampaignFormComponent implements OnInit {
   }
 
   submitCampaignForm(formData) {
-    var name = formData.value.campaignName;
+   // var name = formData.value.campaignName;
     var npo = formData.value.campaignNpo;
     var nopId = formData.value.organizationNumber;
     var cText = formData.value.cText;
     var city = formData.value.city;
     var startDate = formData.value.startDate;
     var endDate = formData.value.endDate;
+
     this.db.collection('/Campaigns').add({
-        campaignName : name,
+       // campaignName : name,
         NpoName : npo,
         nopId: nopId,
         decription : cText,
