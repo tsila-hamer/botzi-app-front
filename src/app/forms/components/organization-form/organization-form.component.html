@@ -21,50 +21,94 @@
       <form class="needs-validation" novalidate="" #formData="ngForm" (ngSubmit)="SubmitOrganizationForm(formData)">
         <div class="row">
 
-          <div class="col-md-6 mb-3">
-            <label>Organization Name:</label>
-            <input type="text" class="form-control" id="organizationName" placeholder="" value="" name="organizationName" required ngModel>
-            <div class="invalid-feedback">
-              Valid organization name is required.
-            </div>
+          <div class="col-md-6 mb-3 form-group">
+            <label for="organizationName">Organization Name:</label>
+            <input type="text" class="form-control" id="organizationName" placeholder=""
+             value="" name="organizationName" required ngModel #organizationNameInput="ngModel">
+             <div class="validate"></div>
+              <div *ngIf="organizationNameInput.invalid && (organizationNameInput.dirty || organizationNameInput.touched)" class="alert alert-danger">
+                <div *ngIf="organizationNameInput.errors.required">
+                  Name is required.
+              </div>
+              </div>
           </div>
-          <div class="col-md-6 mb-3">
-            <label>Organization Number:</label>
-            <input type="text" class="form-control" id="organizationNumber" placeholder="" value="" name="organizationNumber" required ngModel>
-            <div class="invalid-feedback">
-              Valid number is required.
-            </div>
+          <div class="col-md-6 mb-3 form-group">
+            <label for="organizationNumber">Organization Number:</label>
+            <input type="number" class="form-control" id="organizationNumber" placeholder=""
+            value="" name="organizationNumber" required ngModel #organizationNumberInput="ngModel">
+            <div class="validate"></div>
+              <div *ngIf="organizationNumberInput.invalid && (organizationNumberInput.dirty || organizationNumberInput.touched)" class="alert alert-danger">
+                <div *ngIf="organizationNumberInput.errors.required">
+                  Number is required.
+              </div>
+              </div>
           </div>
         </div>
-        <div class="mb-3">
+        <div class=" form-group">
           <label for="oText">About The Organization:</label>
-          <input type="text" id="oText" name="oText" required ngModel>
+          <input required minlength="2" ngModel  class="form-control"
+             name="oText" #oTextInput="ngModel" id="oText" type="text" placeholder="About"
+             data-msg="Please enter at least 8 chars of subject">
+             <div class="validate"></div>
+          <div class= "alert alert-danger"
+           *ngIf="(oTextInput.touched||oTextInput.dirty) && !oTextInput.valid">
+            <div  *ngIf="oTextInput.errors.required">
+              About is required.
+            </div>
+            <div *ngIf="oTextInput.errors.minlength">
+              About should be minimum 2 characters
+            </div>
+          </div>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 form-group">
           <label for="location">Organization Main Location:</label>
-          <input type="tel" class="form-control" id="location" placeholder=" " name="location" required ngModel>
-
+          <input type="text" class="form-control" id="location" placeholder=" " name="location" required ngModel
+          #locationInput="ngModel">
+          <div class="validate"></div>
+          <div *ngIf="locationInput.invalid && (locationInput.dirty || locationInput.touched)" class="alert alert-danger">
+            <div *ngIf="locationInput.errors.required">
+              Location is required.
+          </div>
+          </div>
         </div>
 
         <div class="mb-3">
           <label for="contactName">Contact Name:</label>
-          <input type="text" id="contactName" name="contactName" required ngModel>
+          <input type="text" class="form-control" id="contactName" name="contactName" required ngModel #contactNameInput="ngModel">
+          <div class="validate"></div>
+          <div *ngIf="contactNameInput.invalid && (contactNameInput.dirty || contactNameInput.touched)" class="alert alert-danger">
+            <div *ngIf="contactNameInput.errors.required">
+              Name is required.
+          </div>
+          </div>
 
         </div>
 
         <div class="mb-3">
           <label for="phoneNumber">Contact Phone Number:</label>
-          <input type="text" id="phoneNumber" type=tel  name="phoneNumber" required ngModel>
+          <input type="text" class="form-control" id="phoneNumber" type=tel  name="phoneNumber" required ngModel #phoneNumberInput="ngModel">
+          <div class="validate"></div>
+          <div *ngIf="phoneNumberInput.invalid && (phoneNumberInput.dirty || phoneNumberInput.touched)" class="alert alert-danger">
+            <div *ngIf="phoneNumberInput.errors.required">
+              Name is required.
+          </div>
+          </div>
 
         </div>
 
 
-        <div class="mb-3">
-          <label for="mail">Mail Adress:</label>
-          <input type="text" class="form-control" id="mail" type="email" name="mail" required ngModel>
-          <div class="invalid-feedback">
-            Valid mail address is required.
+        <div class="mb-3 form-group ">
+          <label for="mail">Contect Mail Adress:</label>
+          <input type="email" class="form-control input-error" id="mail" type="email" name="mail"
+          required ngModel email #emailInput="ngModel"
+          placeholder="Email" data-rule="email">
+          <div class="validate"></div>
+              <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="alert alert-danger">
+                <div *ngIf="emailInput.errors.required">
+                  Email is required.
+              </div>
+              <div class="input-error-txt">email invalid please check it and try again</div>
           </div>
         </div>
 
@@ -76,7 +120,7 @@
         <hr class="mb-4">
 
         <div class="submit-btn">
-          <button routerLink="/" type="submit" (click)="SubmitOrganizationForm(formData)">Submit</button>
+          <button routerLink="/" type="submit" (click)="SubmitOrganizationForm(formData)" [disabled]="!formData.valid">Submit</button>
         </div>
       </form>
     </div>

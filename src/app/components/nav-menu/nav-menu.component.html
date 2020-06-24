@@ -15,7 +15,8 @@
         <a *ngIf="!user" class="login-btn" href="" (click)="onLogin()" routerLink="/login">Login</a>
         <a *ngIf="user && userType=='organization'" class="login-btn" href="" routerLink="/campaignForm" >Add a campaign </a>
         <a *ngIf="user && userType=='volunteer'" class="login-btn" href="" routerLink="/matchingCampaigns" >Matches For you </a>
-        <a *ngIf="user" class="login-btn" href="" routerLink="/profile-volunteer">Hi {{ authService.getLoggedUserName() }}</a>
+        <a *ngIf="user && userType=='volunteer'" class="login-btn" href="" routerLink="/profile-volunteer">Hi {{ authService.getLoggedUserName() }}</a>
+        <a *ngIf="user && userType=='organization'" class="login-btn" href="" routerLink="/profile-organization">Hi {{ authService.getLoggedUserName() }}</a>
         <a *ngIf="user" class="login-btn" href="" (click)="onLogout()">Logout</a>
       </div>
     </div>

@@ -38,6 +38,7 @@ const routes: Routes = [
     DisplayMatchesComponent,
     CampaignPageComponent,
     RouterModule,
-    VolCampaignsListComponent  ]
+    VolCampaignsListComponent,
+    CampaignsPerOrgComponent]
 })
 export class CampaignsModule { }

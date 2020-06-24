@@ -1,6 +1,6 @@
-import { AuthService } from './../../../auth.service';
+import { AuthService } from 'app/auth.service';
 import { BackendCallsService } from '../../../backend-calls.service'
-import { Campaign } from '../../../campaigns/models/Campaign';
+import { Campaign } from 'app/campaigns/models/Campaign';
 import { Component, OnInit, Input } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase';
@@ -18,7 +18,7 @@ export class DisplayMatchesComponent implements OnInit {
   constructor(private auh:AuthService, private db: AngularFirestore, private backendcall:BackendCallsService) {
     if (!this.appliedAlready)
     {
-      //this.campaignsList = 
+      //this.campaignsList =
       this.backendcall.getMatches(this.auh.getLoggedUserId()).subscribe(
         data=>
         {

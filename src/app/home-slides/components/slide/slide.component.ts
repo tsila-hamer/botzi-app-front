@@ -13,7 +13,7 @@ export class SlideComponent implements OnInit {
 
   loggedIn()
   {
-    return !this.au.isLoggedIn();
+    return this.au.isLoggedIn();
   }
 
   ngOnInit() {
