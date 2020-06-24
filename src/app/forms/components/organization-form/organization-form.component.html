@@ -21,19 +21,10 @@
       <form class="needs-validation" novalidate="" #formData="ngForm" (ngSubmit)="SubmitOrganizationForm(formData)">
         <div class="row">
 
-          <div class="col-md-6 mb-3 form-group">
-            <label for="organizationName">Organization Name:</label>
-            <input type="text" class="form-control" id="organizationName" placeholder=""
-             value="" name="organizationName" required ngModel #organizationNameInput="ngModel">
-             <div class="validate"></div>
-              <div *ngIf="organizationNameInput.invalid && (organizationNameInput.dirty || organizationNameInput.touched)" class="alert alert-danger">
-                <div *ngIf="organizationNameInput.errors.required">
-                  Name is required.
-              </div>
-              </div>
-          </div>
+          
           <div class="col-md-6 mb-3 form-group">
             <label for="organizationNumber">Organization Number:</label>
+            
             <input type="number" class="form-control" id="organizationNumber" placeholder=""
             value="" name="organizationNumber" required ngModel #organizationNumberInput="ngModel">
             <div class="validate"></div>
@@ -43,7 +34,22 @@
               </div>
               </div>
           </div>
+          
+
+
+
+          
         </div>
+
+        <div class="mb-3">
+          <label for="logo">Organization Logo:</label>
+          <input type="text" class="form-control" id="logo" type=tel  name="phoneNumber" required ngModel #phoneNumberInput="ngModel">
+          <div class="validate"></div>
+
+        </div>
+
+
+
         <div class=" form-group">
           <label for="oText">About The Organization:</label>
           <input required minlength="2" ngModel  class="form-control"
@@ -98,19 +104,7 @@
         </div>
 
 
-        <div class="mb-3 form-group ">
-          <label for="mail">Contect Mail Adress:</label>
-          <input type="email" class="form-control input-error" id="mail" type="email" name="mail"
-          required ngModel email #emailInput="ngModel"
-          placeholder="Email" data-rule="email">
-          <div class="validate"></div>
-              <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="alert alert-danger">
-                <div *ngIf="emailInput.errors.required">
-                  Email is required.
-              </div>
-              <div class="input-error-txt">email invalid please check it and try again</div>
-          </div>
-        </div>
+        
 
 
 
