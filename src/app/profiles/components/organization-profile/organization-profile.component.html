@@ -1,67 +1,60 @@
-
 <section id="organization-profile" class="organization-profile">
   <div class="row">
     <div class="col">
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-      <h2>Organization Profile</h2>      
-    </div>  
-    <div class="row">        
-      <div class="col-md-8 order-md-1"> 
-                   
-        <form class="needs-validation" novalidate="">
+      <h2>Organization Profile</h2>
+    </div>
+    <div class="row" style="justify-content: center;">
+
+        <form class="needs-validation" novalidate="" style="max-width: fit-content; min-width: 500px; justify-content: center;">
+
+          <h4 class="mb-3" id="ceb">Your Details:</h4>
+
           <div class="row">
-          <h4 class="mb-3" id="ceb">Your Details:</h4> 
-        </div >
-          <div class="row">            
-            <div class="col">
-              <div class="row">
               <div class="col"><label for="organizationName">Organization Name:</label></div>
               <div class="col"><label >{{organization.organizationName}}</label></div>
-              </div>
             </div>
-            <div class="col">
-              <div class="row"></div>
+            <div class="row">
               <div class="col"><label for="organizationNumber">Organization Number:</label></div>
               <div class="col"><label >{{organization.organizationNumber}}</label></div>
-            </div>
-            
           </div>
           <div class="row">
             <div class="col"><label for="location">Organization Main Location:</label></div>
             <div class="col"><label>{{organization.location}}</label></div>
-          </div> 
+          </div>
           <div class="row">
             <div class="col"><label for="mail">Mail Adress:</label></div>
-            <div class="col"><label>{{organization.mail}}</label></div>   
-            
+            <div class="col"><label>{{organization.mail}}</label></div>
           </div>
-                  
-                   
+
+
           <div class="row">
             <div class="col"><label for="contactName">Contact Name:</label></div>
             <div class="col"><label >{{organization.contactName}}</label></div>
-            
-                     
-          </div>  
+
+
+          </div>
           <div class="row">
             <div class="col"><label for="phoneNumber">Contact Phone Number:</label></div>
             <div class="col"><label >{{organization.phoneNumber}}</label></div>
-            
-                       
-          </div>  
+
+
+          </div>
           <div class="row">
             <div class="col"><label for="oText">About The Organization:</label></div>
             <div class="col"><label >{{organization.oText}}</label></div>
-            
-            
+
+
           </div>
-          <hr class="mb-4">  
-          <button class="btn btn-primary btn-lg btn-block" type="update" routerLink="/organizationForm" >Edit</button>
+          <hr class="mb-4">
+          <div class="submit-btn">
+          <button routerLink="/OrganizationForm" type="update" (click)="updateOrganization()">Edit</button>
+        </div>
         </form>
-      </div>
+
     </div>
     </div>
-  
+
   </div>
 </section>

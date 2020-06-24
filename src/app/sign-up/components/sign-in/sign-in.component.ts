@@ -55,7 +55,7 @@ export class SignInComponent implements OnInit {
         (success) => {
         console.log(success);
         this.authService.login();
-
+        this.nav.refreshUser();
         this.router.navigate(['/']);
       }).catch(
         (err) => {

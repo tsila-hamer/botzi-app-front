@@ -1,58 +1,60 @@
 
 <section id="volunteer-profile" class="volunteer-profile">
-  <div class="row">
+  <div class="row" style="justify-content: center;">
     <div class="col">
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
 
-      <h2>Volunteer Profile</h2>      
-    </div>  
-    <div class="row">        
-      <div class="col-md-8 order-md-1"> 
-                 
+      <h2>Volunteer Profile</h2>
+    </div>
+    <div class="row" style="justify-content: center;">
+      <div class="col-md-8 order-md-1">
+
         <form class="form" novalidate="">
           <div class="row">
-          <h4 class="mb-3" id="ceb">Your Details:</h4>    
-        </div >  
-          <div class="row">            
+          <h4 class="mb-3" id="ceb">Your Details:</h4>
+        </div >
+          <div class="row">
             <div class="col">
               <label for="volFullName">Volunteer Name:</label>
-            </div>  
+            </div>
             <div class="col"><label>{{this.volunteer.volunteerName}}</label></div>
-              
+
           </div>
           <div class="row">
             <div class="col"><label >Phone Number:</label></div>
-            <div class="col"><label >{{this.volunteer.phone_number}}</label></div>       
+            <div class="col"><label >{{this.volunteer.phone_number}}</label></div>
           </div>
           <div class="row">
             <div class="col"><label >Mail Address:</label></div>
             <div class="col"><label >{{this.volunteer.volEmail}}</label></div>
-          </div>        
+          </div>
           <div class="row">
             <div class="col"><label>Volunteering City:</label></div>
             <div class="col"><label>{{this.volunteer.address}}</label></div>
-           </div>          
-           
+           </div>
+
           <div class="row">
             <div class="col"><label >skills:</label></div>
             <div class="col"><label>{{this.volunteer.skills}}</label></div>
-           </div>  
-          
+           </div>
+
           <div class="row">
             <div class="col"><label>Start Date:</label></div>
             <div class="col"><label >{{this.volunteer.startDate}}:</label></div>
-          </div> 
+          </div>
           <div class="row">
             <div class="col"><label>End Date:</label></div>
             <div class="col"><label >{{this.volunteer.endDate}}:</label></div>
           </div>
-          <hr class="mb-4">  
-          <a class="btn btn-primary btn-lg btn-block" routerLink="/volunteerForm" type="update">Edit</a>
+          <hr class="mb-4">
+          <div class="submit-btn">
+            <button class="" routerLink="/volunteerForm" type="update">Edit</button>
+          </div>
         </form>
       </div>
     </div>
     </div>
-  
+
   </div>
 </section>

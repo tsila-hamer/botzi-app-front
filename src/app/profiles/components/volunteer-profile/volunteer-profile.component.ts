@@ -33,9 +33,10 @@ constructor(private au:AuthService, public route: ActivatedRoute, private db: An
         skills: doc.data().skills,
         address: doc.data().address,
         phone_number: doc.data().phone_number,
-        free_time: doc.data().free_time
-        
-      };         
+        free_time: doc.data().free_time,
+        startDate: doc.data().startDate,
+        endDate: doc.data().endDate
+      };
             this.volunteer = volunteerFromFirebase;
 
           } else {
@@ -45,7 +46,7 @@ constructor(private au:AuthService, public route: ActivatedRoute, private db: An
     }).catch(function(error) {
         console.log("Error getting document:", error);
     });
-  }  
-  
+  }
+
 }
 

@@ -5,6 +5,7 @@ export interface Volunteer {
     address:any,
     phone_number:any,
     free_time:any
-
+    startDate: any,
+    endDate: any
 
  }

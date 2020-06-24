@@ -4,15 +4,14 @@
     <h4 style="font-size:20px;"><a [routerLink]="[ '/campaign', campaign.campaignID]">{{ campaign.campaignName }}</a></h4>
     <p>{{campaign.cText}} ({{campaign.city}}) </p>
     <p>{{ campaign.startDate + " - " + campaign.endDate}}</p>
-    <p>
 
     <a *ngIf="!appliedAlready" [routerLink]="[ '/campaign', campaign.campaignID]">
             Show more</a>
-            
+
     <div class="apply-btn">
       <!-- //routerLink="['/volunteerForm', this.isEdit]" add after merge anf check where you got from -->
      <button  type="button" (click)="applyCampaign()">Edit</button>
     </div>
-    </p>
+
   </div>
 </div>
