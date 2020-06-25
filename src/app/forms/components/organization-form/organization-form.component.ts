@@ -1,5 +1,5 @@
 import * as firebase from 'firebase';
-import { AuthService } from 'app/auth.service';
+import { AuthService } from '../../../auth.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
@@ -11,7 +11,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
   styleUrls: ['./organization-form.component.css']
 })
 export class OrganizationFormComponent implements OnInit {
-  constructor(public route: ActivatedRoute, private db: AngularFirestore, private authService: AuthService, private router: Router) {
+  constructor(public route: ActivatedRoute, private db: AngularFirestore, public authService: AuthService, private router: Router) {
   }
   ngOnInit() {
   }

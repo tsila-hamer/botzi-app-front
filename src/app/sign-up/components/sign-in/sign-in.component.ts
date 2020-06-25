@@ -5,7 +5,7 @@ import { AngularFireAuthModule, AngularFireAuth } from  'angularfire2/auth';
 import * as firebase from 'firebase';
 import { AuthService } from '../../../auth.service';
 
-import {NavMenuComponent} from 'app/components/nav-menu/nav-menu.component'
+import {NavMenuComponent} from '../../../components/nav-menu/nav-menu.component'
 
 @Component({
   selector: 'app-sign-in',
@@ -20,7 +20,7 @@ export class SignInComponent implements OnInit {
   error = '';
   ngOnInit() {
   }
-
+password:any;
   submitLoginFacebook() {
     console.log("submit login to facebook");
     var provider = new firebase.auth.FacebookAuthProvider();
