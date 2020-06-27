@@ -4,6 +4,8 @@ import { Campaign } from '../../../campaigns/models/Campaign';
 import { Component, OnInit, Input } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase';
+import 'firebase/firestore';
+
 @Component({
   selector: 'app-display-matches',
   templateUrl: './display-matches.component.html',

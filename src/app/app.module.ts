@@ -8,6 +8,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule, AngularFireAuth } from  'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
 import * as firebase from 'firebase';
+import 'firebase/firestore';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBZJI-R8jesec4R4H8OyElRNYsc5IGpPQM",

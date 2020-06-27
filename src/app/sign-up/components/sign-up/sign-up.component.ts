@@ -8,6 +8,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { Router } from '@angular/router';
 //import { moveIn } from 'app/router.animations';
 import * as firebase from 'firebase';
+import 'firebase/firestore';
 import { auth } from 'firebase/app';
 import { AuthService } from '../../../auth.service';
 

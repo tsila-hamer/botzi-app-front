@@ -1,4 +1,5 @@
 import * as firebase from 'firebase';
+import 'firebase/firestore';
 import { AuthService } from 'app/auth.service';
 import { Campaign } from 'app/campaigns/models/Campaign';
 import { Component, OnInit } from '@angular/core';

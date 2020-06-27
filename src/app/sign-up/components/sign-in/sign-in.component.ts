@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { SignUpComponent } from '../sign-up/sign-up.component';
 import { AngularFireAuthModule, AngularFireAuth } from  'angularfire2/auth';
 import * as firebase from 'firebase';
+import 'firebase/firestore';
 import { AuthService } from '../../../auth.service';
 
 import {NavMenuComponent} from '../../../components/nav-menu/nav-menu.component'
