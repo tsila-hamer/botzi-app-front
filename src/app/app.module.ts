@@ -74,7 +74,8 @@ const appRoutes: Routes = [
     RouterModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence(),
   ],
   providers: [
     AuthService, AuthGuard, AngularFirestoreModule, NavMenuComponent,BackendCallsService,
