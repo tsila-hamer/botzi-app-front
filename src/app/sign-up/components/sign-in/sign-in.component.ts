@@ -3,9 +3,10 @@ import { Router } from '@angular/router';
 import { SignUpComponent } from '../sign-up/sign-up.component';
 import { AngularFireAuthModule, AngularFireAuth } from  'angularfire2/auth';
 import * as firebase from 'firebase';
+import 'firebase/firestore';
 import { AuthService } from '../../../auth.service';
 
-import {NavMenuComponent} from 'app/components/nav-menu/nav-menu.component'
+import {NavMenuComponent} from '../../../components/nav-menu/nav-menu.component'
 
 @Component({
   selector: 'app-sign-in',
@@ -20,15 +21,16 @@ export class SignInComponent implements OnInit {
   error = '';
   ngOnInit() {
   }
-
+password:any;
   submitLoginFacebook() {
     console.log("submit login to facebook");
     var provider = new firebase.auth.FacebookAuthProvider();
-    firebase.auth().signInWithPopup(provider).then(function(result) {
+    firebase.auth().signInWithPopup(provider).then((result) =>{
       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
       var token = result.credential.accessToken;
       // The signed-in user info.
       var user = result.user;
+      console.log(user);
       this.authService.login();
       this.nav.refreshUser();
       this.router.navigate(['/']);

@@ -1,9 +1,11 @@
-import { AuthService } from 'app/auth.service';
+import { AuthService } from '../../../auth.service';
 import { BackendCallsService } from '../../../backend-calls.service'
-import { Campaign } from 'app/campaigns/models/Campaign';
+import { Campaign } from '../../../campaigns/models/Campaign';
 import { Component, OnInit, Input } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase';
+import 'firebase/firestore';
+
 @Component({
   selector: 'app-display-matches',
   templateUrl: './display-matches.component.html',
@@ -14,7 +16,7 @@ export class DisplayMatchesComponent implements OnInit {
   @Input() appliedAlready: boolean;
   // public campaignsList: Campaign[] = [];
   public campaignsList: string[] = [];
-  private error = '';
+  public error = '';
 
   constructor(private auh:AuthService, private db: AngularFirestore, private backendcall:BackendCallsService) {
     /*

@@ -8,10 +8,11 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { Router } from '@angular/router';
 //import { moveIn } from 'app/router.animations';
 import * as firebase from 'firebase';
+import 'firebase/firestore';
 import { auth } from 'firebase/app';
 import { AuthService } from '../../../auth.service';
 
-import {NavMenuComponent} from 'app/components/nav-menu/nav-menu.component'
+import {NavMenuComponent} from '../../../components/nav-menu/nav-menu.component'
 declare var FB: any;
 
 @Component({
@@ -27,6 +28,8 @@ export class SignUpComponent implements OnInit {
   @Input() signUpHeader: string;
   error: any;
   isVol:boolean;
+  user_id: string;
+  user_displayName: string;
 
   constructor(public af: AngularFireAuth,private router: Router, private authService: AuthService, private db: AngularFirestore, private nav: NavMenuComponent) {
   /*
@@ -65,22 +68,26 @@ export class SignUpComponent implements OnInit {
   }
 
   account = {};
+  email:any;
+  password:any;
+
 
   submitLoginFacebook() {
     console.log("submit login to facebook");
+    var type = this.type;
     var provider = new firebase.auth.FacebookAuthProvider();
-    firebase.auth().signInWithPopup(provider).then(function(result) {
+
+    firebase.auth().signInWithPopup(provider).then((result) =>{
       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
       var token = result.credential.accessToken;
       // The signed-in user info.
       var user = result.user;
-      this.authService.login();
-      this.nav.refreshUser();
-      if (this.type === "volunteer") {
-        this.router.navigate(["/volunteerForm"]);
-      } else {
-        this.router.navigate(["/OrganizationForm"]);
-      }
+      console.log(type);
+      console.log(user.uid);
+      this.user_id = user.uid;
+      this.user_displayName = user.displayName;
+      console.log('signed in with facebook');
+      this.afterFacebookLogin();
       // ...
     }).catch(function(error) {
       // Handle Errors here.
@@ -93,6 +100,19 @@ export class SignUpComponent implements OnInit {
       // ...
     });
     }
+
+  afterFacebookLogin() {
+    console.log('here');
+    this.writeUserData(this.user_id, this.user_displayName);
+    this.authService.login();
+    this.nav.refreshUser();
+
+    if (this.type === "volunteer") {
+      this.router.navigate(["/volunteerForm"]);
+    } else {
+      this.router.navigate(["/OrganizationForm"]);
+    }
+  }
 
   onSubmitSignUp(formData) {
     if(formData.valid) {
@@ -108,7 +128,7 @@ export class SignUpComponent implements OnInit {
         success.updateProfile({displayName: name});
         var userId = success.uid;
         this.writeUserData(userId, name);
-        this.af.auth.signInWithEmailAndPassword(email, password)
+        this.af.auth.signInWithEmailAndPassword(email, password);
         this.nav.refreshUser();
 
         if (this.type == "volunteer") {
@@ -131,5 +151,4 @@ export class SignUpComponent implements OnInit {
         userType: this.type
     }).then(res => {}, err => err);
   }
-
 }

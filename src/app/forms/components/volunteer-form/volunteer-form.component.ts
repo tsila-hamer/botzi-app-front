@@ -1,5 +1,6 @@
 import * as firebase from 'firebase';
-import { AuthService } from 'app/auth.service';
+import 'firebase/firestore';
+import { AuthService } from '../../../auth.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
@@ -16,7 +17,7 @@ export class VolunteerFormComponent implements OnInit {
   @Input() type: string;
   @Input() signUpHeader: string;
   error: any;
-  constructor(public route: ActivatedRoute, private db: AngularFirestore, private authService: AuthService, private router: Router) { }
+  constructor(public route: ActivatedRoute, private db: AngularFirestore, public authService: AuthService, private router: Router) { }
 
 
 
